@@ -211,7 +211,7 @@
 .display-nama {
     background-color: #CAD6FF;
     height: 25px;
-    width: 320px;
+    width: 281px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -233,10 +233,10 @@
 }
 
 
-.display-edit {
+.display-tanggal {
     background-color: #CAD6FF;
     height: 25px;
-    width: 70px;
+    width: 170px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -245,10 +245,10 @@
     padding-top: 3px;
 }
 
-.display-delete {
+.display-buka {
     background-color: #CAD6FF;
     height: 25px;
-    width: 120px;
+    width: 50px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -289,7 +289,7 @@
 .display-nama-2{
     /* background-color: #CAD6FF; */
     height: 25px;
-    width: 320px;
+    width: 281px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -312,10 +312,10 @@
 
 
 
-.display-edit-2 {
+.display-tanggal-2 {
     /* background-color: #CAD6FF; */
     height: 25px;
-    width: 70px;
+    width: 170px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -325,10 +325,10 @@
 }
 
 
-.display-delete-2 {
+.display-buka-2 {
     /* background-color: #CAD6FF; */
     height: 25px;
-    width: 120px;
+    width: 50px;
     border: 1px solid;
     display: flex;
     align-items: center;
