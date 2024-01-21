@@ -135,5 +135,12 @@
     font-weight: 500;
 }
 
+.display-view {
+    background-color: red;
+    height: 415px;
+    width: 1136px;
+
+}
+
 
 
