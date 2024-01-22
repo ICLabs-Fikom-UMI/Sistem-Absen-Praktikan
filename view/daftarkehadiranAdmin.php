@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../admin/css/daftarkehadiran.css">
+    <link rel="stylesheet" href="../view/css/daftarkehadiranAdmin.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
     <title>Document</title>
 </head>
@@ -11,7 +11,7 @@
     <div class="container-1">
         <div class="container-logo-text">
             <div class="logo">
-                <img src="../asset/image/logo.png" alt="" height="40px">
+                <img src="../view/asset/image/logo.png" alt="" height="40px">
             </div>
             <div class="text-logo">
                 <h4 style="color: white;">Sistem Absen Praktikan</h4>
@@ -20,19 +20,16 @@
 
         <div class="display-select">
             <div class="select">
-                <a href="daftarkehadiran.html" class="font-select">Daftar Kehadiran</a>
+                <a href="inputdata.php" class="font-select">Input Data</a>
             </div>
             <div class="select">
-                <a href="daftarperizinan.html" class="font-select">Daftar Perizinan</a>
+                <a href="datamahasiswaAdmin.php" class="font-select">Data Mahasiswa</a>
             </div>
             <div class="select">
-                <a href="perizinan.html" class="font-select">Perizinan</a>
+                <a href="daftarkehadiranAdmin.php" class="font-select">Daftar Kehadiran</a>
             </div>
             <div class="select">
-                <a href="buatbarcode.html" class="font-select">Buat Barcode</a>
-            </div>
-            <div class="select">
-                <a href="scan.html" class="font-select">Scan</a>
+                <a href="daftarperizinanAdmin.php" class="font-select">Daftar Perizinan</a>
             </div>
 
         </div>

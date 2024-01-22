@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../praktikan/css/perizinan.css">
+    <link rel="stylesheet" href="../view/css/buatbarcodePrak.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
     <title>Document</title>
 </head>
@@ -11,7 +11,7 @@
     <div class="container-1">
         <div class="container-logo-text">
             <div class="logo">
-                <img src="../asset/image/logo.png" alt="" height="40px">
+                <img src="../view/asset/image/logo.png" alt="" height="40px">
             </div>
             <div class="text-logo">
                 <h4 style="color: white;">Sistem Absen Praktikan</h4>
@@ -20,16 +20,16 @@
 
         <div class="display-select">
             <div class="select">
-                <a href="perizinan.html" class="font-select">Perizinan</a>
+                <a href="perizinanPrak.php" class="font-select">Perizinan</a>
             </div>
             <div class="select">
-                <a href="buatbarcode.html" class="font-select">Buat Barcode</a>
+                <a href="buatbarcodePrak.php" class="font-select">Buat Barcode</a>
             </div>
         </div>
     </div>
     <div class="container-2">
         <div class="ket-hal">
-            <h3>Perizinan</h3>
+            <h3>Buat Barcode</h3>
         </div>
         <div class="column-input-2">
             <form action="" class="form">
@@ -50,21 +50,18 @@
                     </div>
                 </div>
                 <div class="display-form">
-                    <div class="ket-input">
-                       <label for="">Foto</label>
-                    </div>
-                    <div class="input">
-                        <input type="file" accept=".jpeg, .jpg, .png" value="Pilih Foto">
-                    </div>
-                </div>
-                <div class="display-form">
                     <div class="button-potision">
-                        <input class="button-input" type="submit" value="Kirim">
-                        <input class="button-input" type="reset" value="Batal">
+                        <button class="button-input">Buat</button>
+                        <button class="button-input" type="reset">Batal</button>
                     </div>
                 </div>
             </form>
         </div>
+
+        <div class="image-2">
+            <!-- <img class="image-3" src="../asisten/asset/Group.png" alt=""> -->
+        </div>
+        
     </div>
 </body>
 </html>

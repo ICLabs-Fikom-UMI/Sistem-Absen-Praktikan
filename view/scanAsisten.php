@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asisten/css/scan.css">
+    <link rel="stylesheet" href="../view/css/scanAsisten.css">
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <title>Document</title>
 </head>
@@ -11,7 +11,7 @@
     <div class="container">
         <div class="container-logo-text">
             <div class="logo">
-                <img src="../asisten/asset/logo.png" alt="" height="40px">
+                <img src="../view/asset/image/logo.png" alt="" height="40px">
             </div>
             <div class="text-logo">
                 <h4 style="color: white;">Sistem Absen Praktikan</h4>
@@ -20,19 +20,19 @@
 
         <div class="display-select">
             <div class="select">
-                <a href="daftarkehadiran.html" class="font-select">Daftar Kehadiran</a>
+                <a href="daftarkehadiranAsisten.php" class="font-select">Daftar Kehadiran</a>
             </div>
             <div class="select">
-                <a href="daftarperizinan.html" class="font-select">Daftar Perizinan</a>
+                <a href="daftarperizinanAsisten.php" class="font-select">Daftar Perizinan</a>
             </div>
             <div class="select">
-                <a href="perizinan.html" class="font-select">Perizinan</a>
+                <a href="perizinanAsisten.php" class="font-select">Perizinan</a>
             </div>
             <div class="select">
-                <a href="buatbarcode.html" class="font-select">Buat Barcode</a>
+                <a href="buatbarcodeAsisten.php" class="font-select">Buat Barcode</a>
             </div>
             <div class="select">
-                <a href="scan.html" class="font-select">Scan</a>
+                <a href="scanAsisten.php" class="font-select">Scan</a>
             </div>
         </div>
     </div>

@@ -1,16 +1,30 @@
+
+<?php
+
+include '../controller/controllerUser.php';
+
+
+    if(isset($_POST["submit"])){
+        
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../admin/css/inputdata.css">
+    <link rel="stylesheet" href="../view/css/inputdata.css">
     <title>Document</title>
 </head>
 <body class="body">
     <div class="container">
         <div class="container-logo-text">
             <div class="logo">
-                <img src="../asset/image/logo.png" alt="" height="40px">
+                <img src="../view/asset/image/logo.png" alt="" height="40px">
             </div>
             <div class="text-logo">
                 <h4 style="color: white;">Sistem Absen Praktikan</h4>
@@ -19,16 +33,16 @@
 
         <div class="display-select">
             <div class="select">
-                <a href="inputdata.html" class="font-select">Input Data</a>
+                <a href="inputdata.php" class="font-select">Input Data</a>
             </div>
             <div class="select">
-                <a href="datamahasiswa.html" class="font-select">Data Mahasiswa</a>
+                <a href="datamahasiswaAdmin.php" class="font-select">Data Mahasiswa</a>
             </div>
             <div class="select">
-                <a href="daftarkehadiran.html" class="font-select">Daftar Kehadiran</a>
+                <a href="daftarkehadiranAdmin.php" class="font-select">Daftar Kehadiran</a>
             </div>
             <div class="select">
-                <a href="daftarperizinan.html" class="font-select">Daftar Perizinan</a>
+                <a href="daftarperizinanAdmin.php" class="font-select">Daftar Perizinan</a>
             </div>
 
         </div>
@@ -44,7 +58,7 @@
                         <label for="">Nama</label>
                     </div>
                     <div class="column-input">
-                        <input class="input" type="text" name="" id="" placeholder="Masukkan Nama Mahasiswa">
+                        <input class="input" type="text" name="nama" id="" placeholder="Masukkan Nama Mahasiswa">
                     </div>
                 </div>
                 <div class="display-input">
@@ -52,7 +66,7 @@
                         <label for="">NIM</label>
                     </div>
                     <div class="column-input">
-                        <input class="input" type="text" name="" id="" placeholder="Masukkan NIM">
+                        <input class="input" type="text" name="NIM" id="" placeholder="Masukkan NIM">
                     </div>
                 </div>
                 <div class="display-input">
@@ -60,26 +74,26 @@
                         <label for="">Kode Kelas</label>
                     </div>
                     <div class="column-input">
-                        <input class="input" type="text" name="" id="" placeholder="Masukkan Kode Kelas">
+                        <input class="input" type="text" name="kodeKelas" id="" placeholder="Masukkan Kode Kelas">
                     </div>
                 </div>
-                <div class="display-input">
+                <!-- <div class="display-input">
                     <div class="ket-input">
                         <label for="">Kode Matkul</label>
                     </div>
                     <div class="column-input">
                         <input class="input" type="text" name="" id="" placeholder="Masukkan Kode Matkul">
                     </div>
-                </div>
+                </div> -->
                 <div class="display-input">
                     <div class="ket-input">
                         <label for="">Frekuensi</label>
                     </div>
                     <div class="column-input">
-                        <input class="input" type="text" name="" id="" placeholder="Masukkan Frekuensi">
+                        <input class="input" type="text" name="frekuensi" id="" placeholder="Masukkan Frekuensi">
                     </div>
                 </div>
-                <div class="display-input">
+                <!-- <div class="display-input">
                     <div class="ket-input">
                         <label for="">Kode Ruangan</label>
                     </div>
@@ -102,10 +116,10 @@
                     <div class="column-input">
                         <input class="input" type="text" name="" id="" placeholder="Masukkan Kode Asisten Kedua">
                     </div>
-                </div>
+                </div> -->
                 <div class="button">
                     <div class="display-button-simpan">
-                        <button class="button-simpan">Simpan</button>
+                        <button class="button-simpan"  name=>Simpan</button>
                     </div>
                     <div class="display-button-batal">
                         <button class="button-batal">Batal</button>

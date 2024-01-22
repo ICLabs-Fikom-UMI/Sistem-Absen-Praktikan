@@ -10,9 +10,10 @@
     width: 300px;
 }
 
-.container-2{
+.container-23{
+    background-color: white;
     width: 1140px;
-    background-image: url("../asset/background.png");
+    /* background-image: url("../view/asset/image/background.png"); */
     border-radius: 5px;
 }
 
@@ -37,7 +38,6 @@
 }
 
 .display-select {
-    /* background-color: red; */
     height: 250px;
     width: 240px;
     display: flex;

@@ -12,7 +12,7 @@
 
 .container-2{
     width: 1140px;
-    background-image: url("../asset/background.png");
+    background-image: url("../asset/image/background.png");
     border-radius: 5px;
 }
 
@@ -37,6 +37,7 @@
 }
 
 .display-select {
+    /* background-color: red; */
     height: 250px;
     width: 240px;
     display: flex;

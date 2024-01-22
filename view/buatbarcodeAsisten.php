@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../praktikan/css/buatbarcode.css">
+    <link rel="stylesheet" href="../view/css/buatbarcodeAsisten.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
     <title>Document</title>
 </head>
@@ -11,7 +11,7 @@
     <div class="container-1">
         <div class="container-logo-text">
             <div class="logo">
-                <img src="../asset/image/logo.png" alt="" height="40px">
+                <img src="../view/asset/image/logo.png" alt="" height="40px">
             </div>
             <div class="text-logo">
                 <h4 style="color: white;">Sistem Absen Praktikan</h4>
@@ -20,10 +20,19 @@
 
         <div class="display-select">
             <div class="select">
-                <a href="perizinan.html" class="font-select">Perizinan</a>
+                <a href="daftarkehadiranAsisten.php" class="font-select">Daftar Kehadiran</a>
             </div>
             <div class="select">
-                <a href="buatbarcode.html" class="font-select">Buat Barcode</a>
+                <a href="daftarperizinanAsisten.php" class="font-select">Daftar Perizinan</a>
+            </div>
+            <div class="select">
+                <a href="perizinanAsisten.php" class="font-select">Perizinan</a>
+            </div>
+            <div class="select">
+                <a href="buatbarcodeAsisten.php" class="font-select">Buat Barcode</a>
+            </div>
+            <div class="select">
+                <a href="scanAsisten.php" class="font-select">Scan</a>
             </div>
         </div>
     </div>
@@ -59,7 +68,7 @@
         </div>
 
         <div class="image-2">
-            <img class="image-3" src="../asisten/asset/Group.png" alt="">
+            <!-- <img class="image-3" src="../asisten/asset/Group.png" alt=""> -->
         </div>
         
     </div>
