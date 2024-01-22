@@ -11,8 +11,9 @@
 }
 
 .container-2{
+    background-color: white;
     width: 1140px;
-    background-image: url("../asset/image/background.png");
+    /* background-image: url("../asset/background.png"); */
     border-radius: 5px;
 }
 
@@ -37,6 +38,7 @@
 }
 
 .display-select {
+    /* background-color: red; */
     height: 250px;
     width: 240px;
     display: flex;
@@ -56,6 +58,32 @@
     font-size: 20px;
     color: white;
     font-family: 'Poppins', sans-serif;
+}
+
+.ket-hal {
+    background-color: rebeccapurple;
+    height: 50px;
+    width: 1136px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+
+.scan {
+    /* background-color: red; */
+    width: 100% ;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scan-2 {
+    /* background-color: blue; */
+    height: 500px;
+    width: 600px;
 }
 
 
