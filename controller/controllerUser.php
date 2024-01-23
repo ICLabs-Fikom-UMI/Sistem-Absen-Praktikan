@@ -103,20 +103,32 @@ class controllerUser {
 
 
     public function insert_surat(surat $objectSurat){
-        
+
         $stb = $objectSurat->getStb();
         $frekuensi = $objectSurat->getFrekuensi();
         $file = $objectSurat->getFile();
+
+
+        echo $file;
 
         $objectConnect = new connect();
 
         $conn = $objectConnect->getDB();
 
+
+
         $query = "CALL insert_surat(?,?,?)";
 
             $stmt = $conn->prepare($query);
+
             $stmt->bind_param("sss", $stb, $frekuensi, $file);  
-            $stmt->execute();  
+
+            try{
+                $stmt->execute(); 
+            }catch(Exception $exception) {
+                echo $exception->getMessage();  
+            }
+            
             $stmt->close();
 
         $conn->close();
