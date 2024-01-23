@@ -10,7 +10,6 @@ class connect {
 
     public function getDB(){
         $conn = mysqli_connect(self::serverName, self::username, self::password, self::dbName);
-
         return $conn;
     }
 } 

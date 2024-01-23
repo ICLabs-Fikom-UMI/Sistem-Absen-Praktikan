@@ -6,6 +6,8 @@ class user {
     private $name;
     private $password;
     private $jenisUser;
+    private $frekuensi;
+    private $kode_kelas;
 
 
 
@@ -40,6 +42,23 @@ class user {
 
     public function getJenisUser(){
         return $this->jenisUser;
+    }
+
+
+    public function setFrekuensi($frekuensi){
+        $this->frekuensi = $frekuensi;
+    }
+
+    public function getFrekuensi(){
+        return $this->frekuensi;
+    }
+
+    public function setKodeKelas($kodeKelas){
+        $this->kodeKelas = $kodeKelas;
+    }
+
+    public function getKodeKelas(){
+        return $this->kodeKelas;
     }
 }
 

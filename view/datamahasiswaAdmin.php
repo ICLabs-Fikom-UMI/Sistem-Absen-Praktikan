@@ -1,3 +1,14 @@
+<?php
+
+
+    if(isset($_POST["submit"])){
+        
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +59,7 @@
         </div>
         <div class="display-search">
             <div class="ket-hal-3">
-                <button class="button">search</button>
+                <button class="button" name="submit">search</button>
             </div>
         </div>
 
@@ -75,7 +86,6 @@
             </div>
             <div class="scroll-view-data" style="height: 250px;">
                 <div class="display-view-2">
-
                     <div class="display-view-3">
                         <div class="display-no-2">
                             <h3 class="font-view">1</h3>
@@ -96,207 +106,6 @@
                             <h3 class="font-view">delete</h3>
                         </div>
                     </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-                    
                 </div>
            </div> 
         </div>

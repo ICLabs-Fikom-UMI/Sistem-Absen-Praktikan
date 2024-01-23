@@ -3,9 +3,21 @@
 
 include '../controller/controllerUser.php';
 
+    if(isset($_POST["sub"])){
+        $objectControllerUser = new controllerUser();
+        $objectUser = new user();
 
-    if(isset($_POST["submit"])){
-        
+        $name = $_POST["nama"];
+        $stb = $_POST["NIM"];
+        $frekuensi = $_POST["frekuensi"];
+        $kodeKelas = $_POST["kodeKelas"];
+
+        $objectUser->setName($name);
+        $objectUser->setStb($stb);
+        $objectUser->setFrekuensi($frekuensi);
+        $objectUser->setKodeKelas($kodeKelas);
+
+        $objectControllerUser->insertDataUser($objectUser); 
     }
 
 ?>
@@ -52,7 +64,7 @@ include '../controller/controllerUser.php';
             <h3>Penginputan Data Mahasiswa</h3>
         </div>
         <div class="form-input">
-            <form action="" class="form">
+            <form action="" method="post" class="form">
                 <div class="display-input">
                     <div class="ket-input">
                         <label for="">Nama</label>
@@ -119,7 +131,8 @@ include '../controller/controllerUser.php';
                 </div> -->
                 <div class="button">
                     <div class="display-button-simpan">
-                        <button class="button-simpan"  name=>Simpan</button>
+                        <!-- <button class="button-simpan"  name="submit">Simpan</button> -->
+                        <input type="submit" name="sub" class="button-simpan" value="Simpan" >
                     </div>
                     <div class="display-button-batal">
                         <button class="button-batal">Batal</button>

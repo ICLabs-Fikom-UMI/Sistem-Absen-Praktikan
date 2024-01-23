@@ -4,8 +4,6 @@
 include_once '../model/user.php';
 include_once '../database/connect.php';
 include_once '../exception/connectException.php';
-include_once '../model/frekuensiMatkul.php';
-include_once '../model/kelas.php';
 
 class controllerUser {
 
@@ -17,17 +15,16 @@ class controllerUser {
         throw new connectException("gagal terhubung");
     }
 
-    public function insertDataUser(user $objectUser, frekuensiMatkul $objectFrekuensi, kelas $objectKelas){
+    public function insertDataUser(user $objectUser){
 
         $objectConnect = new connect();
 
-
         $stb = $objectUser->getStb();
         $name = $objectUser->getName();
-
-        $frekuensi = $objectFrekuensi->getFrekuensi();
-
-        $kodeKelas = $objectKelas->getKodeKelas();
+        $frekuensi = $objectUser->getFrekuensi();
+        $kodeKelas = $objectUser->getKodeKelas();
+        $jenisUser = "PRAKTIKAN";
+        $password = $stb."-123";
 
         $conn = $objectConnect->getDB();
 
@@ -35,17 +32,41 @@ class controllerUser {
 
             $this->cekStatusConnect($conn);
 
-            $password = $stb."123";
+            $stmt = $conn->prepare("INSERT INTO tbl_user(stb, kode_kelas, frekuensi, nama,passwords, jenis_user) VALUES (?, ?, ?, ?, ?, ?)");
 
-            mysqli_query($conn, "INSERT INTO tbl_user (stb, nama, password, jenis_user) 
-            VALUE ('$stb', '$name', '$password', 'PRAKTIKAN')");
+            $stmt->bind_param("ssssss", $stb, $kodeKelas, $frekuensi, $name,$password, $jenisUser);
 
+            try{
+                $stmt->execute();
+            }catch (Exception $exception){
+                echo "Error : " . $exception->getMessage();
+            }
 
-            // mysql_query($conn, "UPDATE tbl_kelas SET stb = '$stb' WHERE kode_kelas = '$kodeKelas'");
+            $stmt->close();
+            $conn->close();
 
         }catch (connectException $exception){
             throw new connectException($exception);
         }
+
+    }
+
+
+
+    public function cariDataMahasisiwa($cari){
+
+        $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas
+        FROM tbl_user
+        INNER JOIN tbl_kelas ON tbl_user.kode_kelas = tbl_kelas.kode_kelas
+        WHERE tbl_user.frekuensi = ?
+        ";
+
+        $objectConnect = new connect();
+        $conn = $objectConnect->getDB();
+
+        $stmt = $conn->prepare($query);
+
+        $stmt->bind_param("s", $cari);
 
     }
 
