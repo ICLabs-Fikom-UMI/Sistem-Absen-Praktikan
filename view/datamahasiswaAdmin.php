@@ -1,8 +1,12 @@
 <?php
 
+include_once '../controller/controllerUser.php';
 
     if(isset($_POST["submit"])){
-        
+
+        $object = new controllerUser();
+        $cari = $_POST["cari"];
+        $result = $object->cariDataMahasisiwa($cari);
     }
 
 
@@ -49,19 +53,21 @@
         <div class="ket-hal">
             <h3>Data Mahasiswa</h3>
         </div>
-        <div class="display-input">
-            <div class="ket-hal-2">
-                <h3 class="font-ket-hal-2">NIM</h3>
+        <form action="" method="post">
+            <div class="display-input">
+                <div class="ket-hal-2">
+                    <h3 class="font-ket-hal-2">NIM</h3>
             </div>
-            <div class="column-input">
-                <input class="ket-column-input" type="text" placeholder="Masukkan Frekuensi">
+                <div class="column-input">
+                    <input class="ket-column-input" type="text" name="cari" placeholder="Masukkan Frekuensi">
+                </div>
             </div>
-        </div>
-        <div class="display-search">
-            <div class="ket-hal-3">
-                <button class="button" name="submit">search</button>
+            <div class="display-search">
+                <div class="ket-hal-3">
+                    <button class="button" name="submit">search</button>
+                </div>
             </div>
-        </div>
+        </form>
 
         <div class="display-view">
             <div class="display-view-1">
@@ -86,7 +92,42 @@
             </div>
             <div class="scroll-view-data" style="height: 250px;">
                 <div class="display-view-2">
+
+                <?php foreach ($result as $value): ?>
+
                     <div class="display-view-3">
+                        <div class="display-no-2">
+                            <h3 class="font-view">
+                                <?php echo $value->getNo(); ?>
+                            </h3>
+                        </div>
+                        <div class="display-NIM-2">
+                            <h3 class="font-view">
+                                <?php echo $value->getStb(); ?>
+                            </h3>
+                        </div>
+                        <div class="display-nama-2">
+                            <h3 class="font-view">
+                                <?php echo $value->getNama(); ?>
+                            </h3>
+                        </div>
+                        <div class="display-kelas-2">
+                            <h3 class="font-view">
+                                <?php echo $value->getKelas(); ?>
+                            </h3>
+                        </div>
+                        <div class="display-edit-2">
+                            <h3 class="font-view">edit</h3>
+                        </div>
+                        <div class="display-delete-2">
+                            <h3 class="font-view">delete</h3>
+                        </div>
+                    </div>
+
+                <?php endforeach; ?>
+
+
+                    <!-- <div class="display-view-3">
                         <div class="display-no-2">
                             <h3 class="font-view">1</h3>
                         </div>
@@ -106,6 +147,30 @@
                             <h3 class="font-view">delete</h3>
                         </div>
                     </div>
+
+
+                    <div class="display-view-3">
+                        <div class="display-no-2">
+                            <h3 class="font-view">1</h3>
+                        </div>
+                        <div class="display-NIM-2">
+                            <h3 class="font-view">13020210048</h3>
+                        </div>
+                        <div class="display-nama-2">
+                            <h3 class="font-view">Ahmad Rendi</h3>
+                        </div>
+                        <div class="display-kelas-2">
+                            <h3 class="font-view">A1</h3>
+                        </div>
+                        <div class="display-edit-2">
+                            <h3 class="font-view">edit</h3>
+                        </div>
+                        <div class="display-delete-2">
+                            <h3 class="font-view">delete</h3>
+                        </div>
+                    </div> -->
+
+
                 </div>
            </div> 
         </div>

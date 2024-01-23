@@ -4,6 +4,7 @@
 include_once '../model/user.php';
 include_once '../database/connect.php';
 include_once '../exception/connectException.php';
+include_once '../helper/viewDataMahasiswa.php';
 
 class controllerUser {
 
@@ -67,6 +68,27 @@ class controllerUser {
         $stmt = $conn->prepare($query);
 
         $stmt->bind_param("s", $cari);
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $resultArray = array();
+
+        $count = 0;
+
+        while ($row = $result->fetch_assoc()){
+            $objectDataMahasiswa = new viewDataMahasiswa();
+            $count++;
+            $objectDataMahasiswa->setNo($count);
+            $objectDataMahasiswa->setStb($row['stb']);
+            $objectDataMahasiswa->setNama($row['nama']);
+            $objectDataMahasiswa->setKelas($row['kelas']);
+
+            array_push($resultArray, $objectDataMahasiswa);
+        }
+
+        return $resultArray;
 
     }
 

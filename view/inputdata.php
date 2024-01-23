@@ -1,7 +1,7 @@
 
 <?php
 
-include '../controller/controllerUser.php';
+include_once '../controller/controllerUser.php';
 
     if(isset($_POST["sub"])){
         $objectControllerUser = new controllerUser();
