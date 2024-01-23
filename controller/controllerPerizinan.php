@@ -1,10 +1,9 @@
 <?php
 
-include_once '../helper/viewDataPerizinan';
+include_once '../helper/viewDataPerizinan.php';
 include_once '../database/connect.php';
 
 class controllerPerizinan {
-
 
     public function cariDataPerizinan($cari){
         $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas, tbl_surat.waktu
@@ -32,28 +31,19 @@ class controllerPerizinan {
 
 
         while($row = $result->fetch_assoc()){
-
-            $objectDataPerizinan = new controllerPerizinan();
-
+            $objectDataPerizinan = new viewDataPerizinan();
 
             $count++;
-        echo "sampai";
-
 
             $objectDataPerizinan->setNo($count);
-        echo "sampai disini";
 
             $objectDataPerizinan->setStb($row['stb']);
             $objectDataPerizinan->setNama($row['nama']);
             $objectDataPerizinan->setKelas($row['kelas']);
             $objectDataPerizinan->setTanggal($row['waktu']);
 
-
-
             array_push($resultArray, $objectDataPerizinan);
         }
-
-        echo "sampai";
 
         return $resultArray;
     }

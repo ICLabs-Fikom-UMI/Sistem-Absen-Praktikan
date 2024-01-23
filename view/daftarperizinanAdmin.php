@@ -1,3 +1,19 @@
+
+<?php
+
+include_once '../controller/controllerPerizinan.php';
+
+    if(isset($_POST["submit"])){
+
+        $objectData = new controllerPerizinan();
+
+        $cari = $_POST['cari'];
+        $result = $objectData->cariDataPerizinan($cari);
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +54,22 @@
         <div class="ket-hal">
             <h3>Daftar Perizinan</h3>
         </div>
-        <div class="display-input">
+        <form action="" method="post">
+            <div class="display-input">
+                <div class="ket-hal-2">
+                    <h3 class="font-ket-hal-2">NIM</h3>
+                </div>
+                <div class="column-input">
+                    <input class="ket-column-input" name="cari" type="text" placeholder="Masukkan NIM">
+                </div>
+            </div>
+            <div class="display-search">
+                <div class="ket-hal-3">
+                    <input type="submit" class="button" name="submit" value="search">
+                </div>
+            </div>
+        </form>
+        <!-- <div class="display-input">
             <div class="ket-hal-2">
                 <h3 class="font-ket-hal-2">NIM</h3>
             </div>
@@ -50,7 +81,7 @@
             <div class="ket-hal-3">
                 <button class="button">search</button>
             </div>
-        </div>
+        </div> -->
 
         <div class="display-view">
             <div class="display-view-1">
@@ -76,7 +107,42 @@
             <div class="scroll-view-data" style="height: 250px;">
                 <div class="display-view-2">
 
-                    <div class="display-view-3">
+                    <?php foreach ($result as $value): ?>
+
+                        <div class="display-view-3">
+                            <div class="display-no-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getNo(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-NIM-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getStb(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-nama-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getNama(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-kelas-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getKelas(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-tanggal-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getTanggal(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-buka-2">
+                                <h3 class="font-view">Buka</h3>
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+
+                    <!-- <div class="display-view-3">
                         <div class="display-no-2">
                             <h3 class="font-view">1</h3>
                         </div>
@@ -95,7 +161,7 @@
                         <div class="display-buka-2">
                             <h3 class="font-view">Buka</h3>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
            </div> 

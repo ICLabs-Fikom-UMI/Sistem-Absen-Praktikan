@@ -7,17 +7,12 @@ include_once '../controller/controllerPerizinan.php';
 
         $objectData = new controllerPerizinan();
 
-        // echo "sampai";
         $cari = $_POST['cari'];
-        // echo $cari;
         $result = $objectData->cariDataPerizinan($cari);
-
-        echo "sampai";
 
     }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +20,6 @@ include_once '../controller/controllerPerizinan.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../view/css/daftarperizinanAsisten.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
     <title>Document</title>
 </head>
 <body class="body">
@@ -72,24 +66,10 @@ include_once '../controller/controllerPerizinan.php';
             </div>
             <div class="display-search">
                 <div class="ket-hal-3">
-                    <!-- <button class="button" name="submit">search</button> -->
                     <input type="submit" class="button" name="submit" value="search">
                 </div>
             </div>
         </form>
-        <!-- <div class="display-input">
-            <div class="ket-hal-2">
-                <h3 class="font-ket-hal-2">NIM</h3>
-            </div>
-            <div class="column-input">
-                <input class="ket-column-input" type="text" placeholder="Masukkan NIM">
-            </div>
-        </div>
-        <div class="display-search">
-            <div class="ket-hal-3">
-                <button class="button">search</button>
-            </div>
-        </div> -->
 
         <div class="display-view">
             <div class="display-view-1">
