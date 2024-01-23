@@ -1,3 +1,13 @@
+
+<?php
+
+    if(isset($_POST["submit"])){
+        
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +50,22 @@
         <div class="ket-hal">
             <h3>Daftar Perizinan</h3>
         </div>
-        <div class="display-input">
+        <form action="" method="post">
+            <div class="display-input">
+                <div class="ket-hal-2">
+                    <h3 class="font-ket-hal-2">NIM</h3>
+                </div>
+                <div class="column-input">
+                    <input class="ket-column-input" type="text" placeholder="Masukkan NIM">
+                </div>
+            </div>
+            <div class="display-search">
+                <div class="ket-hal-3">
+                    <button class="button" name="submit">search</button>
+                </div>
+            </div>
+        </form>
+        <!-- <div class="display-input">
             <div class="ket-hal-2">
                 <h3 class="font-ket-hal-2">NIM</h3>
             </div>
@@ -52,7 +77,7 @@
             <div class="ket-hal-3">
                 <button class="button">search</button>
             </div>
-        </div>
+        </div> -->
 
         <div class="display-view">
             <div class="display-view-1">

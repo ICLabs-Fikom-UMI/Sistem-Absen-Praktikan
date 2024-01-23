@@ -5,6 +5,7 @@ include_once '../model/user.php';
 include_once '../database/connect.php';
 include_once '../exception/connectException.php';
 include_once '../helper/viewDataMahasiswa.php';
+include_once '../model/surat.php';
 
 class controllerUser {
 
@@ -28,17 +29,23 @@ class controllerUser {
         $password = $stb."-123";
 
         $conn = $objectConnect->getDB();
+        // $conn2 = $objectConnect->getDB();
 
         try{
 
             $this->cekStatusConnect($conn);
 
-            $stmt = $conn->prepare("INSERT INTO tbl_user(stb, kode_kelas, frekuensi, nama,passwords, jenis_user) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO tbl_user(stb, kode_kelas, nama,passwords, jenis_user) VALUES (?, ?, ?, ?, ?)");
 
-            $stmt->bind_param("ssssss", $stb, $kodeKelas, $frekuensi, $name,$password, $jenisUser);
+            $query = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUES (?,?)";
+            $stmt2 = $conn->prepare($query);
+        
+            $stmt->bind_param("sssss", $stb, $kodeKelas, $name,$password, $jenisUser);
+            $stmt2->bind_param("ss", $stb, $frekuensi);
 
             try{
                 $stmt->execute();
+                $stmt2->execute();
             }catch (Exception $exception){
                 echo "Error : " . $exception->getMessage();
             }
@@ -57,9 +64,10 @@ class controllerUser {
     public function cariDataMahasisiwa($cari){
 
         $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas
-        FROM tbl_user
+        FROM tbl_frekuensi_matkul
+        INNER JOIN tbl_user ON tbl_frekuensi_matkul.stb = tbl_user.stb
         INNER JOIN tbl_kelas ON tbl_user.kode_kelas = tbl_kelas.kode_kelas
-        WHERE tbl_user.frekuensi = ?
+        WHERE tbl_frekuensi_matkul.frekuensi = ?
         ";
 
         $objectConnect = new connect();
@@ -90,6 +98,28 @@ class controllerUser {
 
         return $resultArray;
 
+    }
+
+
+
+    public function insert_surat(surat $objectSurat){
+        
+        $stb = $objectSurat->getStb();
+        $frekuensi = $objectSurat->getFrekuensi();
+        $file = $objectSurat->getFile();
+
+        $objectConnect = new connect();
+
+        $conn = $objectConnect->getDB();
+
+        $query = "CALL insert_surat(?,?,?)";
+
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param("sss", $stb, $frekuensi, $file);  
+            $stmt->execute();  
+            $stmt->close();
+
+        $conn->close();
     }
 
 }
