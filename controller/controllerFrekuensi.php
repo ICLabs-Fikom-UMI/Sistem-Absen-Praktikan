@@ -2,7 +2,6 @@
 
 include_once '../database/connect.php';
 include_once '../exception/NotFoundException.php';
-// include_once '../'
 
 
 class controllerFrekuensi {

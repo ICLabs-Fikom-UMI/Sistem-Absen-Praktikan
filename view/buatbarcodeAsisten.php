@@ -104,14 +104,11 @@ include_once '../controller/controllerUser.php';
                 </div>
             </form>
         </div>
-
         <div class="image-2">
             <?php if ($resultFrekuensi != NULL): ?>
-
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= <?php echo $resultFrekuensi.$reusltStb ?>" alt="">
             <?php endif; ?>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= <?php echo $resultFrekuensi.$reusltStb ?>" alt="">
         </div>
-        
     </div>
 </body>
 </html>
