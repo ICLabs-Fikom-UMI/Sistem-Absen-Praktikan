@@ -108,14 +108,9 @@ class controllerUser {
         $frekuensi = $objectSurat->getFrekuensi();
         $file = $objectSurat->getFile();
 
-
-        echo $file;
-
         $objectConnect = new connect();
 
         $conn = $objectConnect->getDB();
-
-
 
         $query = "CALL insert_surat(?,?,?)";
 
@@ -126,12 +121,39 @@ class controllerUser {
             try{
                 $stmt->execute(); 
             }catch(Exception $exception) {
-                echo $exception->getMessage();  
+                // echo $exception->getMessage();  
             }
             
             $stmt->close();
 
         $conn->close();
+    }
+
+
+    public function cariStb($cari){
+        $objectConnect = new connect();
+
+        $conn = $objectConnect->getDB();
+
+        $query = "SELECT searchStb(?) AS hasil";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $cari);
+
+        try{
+            $stmt->execute();
+
+            
+            $resutl = $stmt->get_result();
+
+            $row = $resutl->fetch_assoc();
+
+            $hasil = $row['hasil'];
+
+            return $hasil;
+        } catch (NotFoundException $exception){
+            throw new NotFoundException("data tidak ditemukan");
+        }
     }
 
 }

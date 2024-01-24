@@ -17,7 +17,6 @@ include_once '../controller/controllerUser.php';
         $objectSurat->setFile($file);
 
         $objcetControllerUser->insert_surat($objectSurat);
-
     }
 
 ?>
