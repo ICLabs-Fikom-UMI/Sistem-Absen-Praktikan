@@ -8,8 +8,6 @@ include_once '../controller/controllerUser.php';
         $cari = $_POST["cari"];
         $result = $object->cariDataMahasisiwa($cari);
     }
-
-
 ?>
 
 
@@ -56,7 +54,7 @@ include_once '../controller/controllerUser.php';
         <form action="" method="post">
             <div class="display-input">
                 <div class="ket-hal-2">
-                    <h3 class="font-ket-hal-2">NIM</h3>
+                    <h3 class="font-ket-hal-2">Frekuensi</h3>
             </div>
                 <div class="column-input">
                     <input class="ket-column-input" type="text" name="cari" placeholder="Masukkan Frekuensi">
@@ -92,85 +90,37 @@ include_once '../controller/controllerUser.php';
             </div>
             <div class="scroll-view-data" style="height: 250px;">
                 <div class="display-view-2">
+                    <?php foreach ($result as $value): ?>
+                        <div class="display-view-3">
+                            <div class="display-no-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getNo(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-NIM-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getStb(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-nama-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getNama(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-kelas-2">
+                                <h3 class="font-view">
+                                    <?php echo $value->getKelas(); ?>
+                                </h3>
+                            </div>
+                            <div class="display-edit-2">
+                                <h3 class="font-view">edit</h3>
+                            </div>
+                            <div class="display-delete-2">
+                                <h3 class="font-view">delete</h3>
+                            </div>
+                        </div>
 
-                <?php foreach ($result as $value): ?>
-
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">
-                                <?php echo $value->getNo(); ?>
-                            </h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">
-                                <?php echo $value->getStb(); ?>
-                            </h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">
-                                <?php echo $value->getNama(); ?>
-                            </h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">
-                                <?php echo $value->getKelas(); ?>
-                            </h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-
-                <?php endforeach; ?>
-
-
-                    <!-- <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="display-view-3">
-                        <div class="display-no-2">
-                            <h3 class="font-view">1</h3>
-                        </div>
-                        <div class="display-NIM-2">
-                            <h3 class="font-view">13020210048</h3>
-                        </div>
-                        <div class="display-nama-2">
-                            <h3 class="font-view">Ahmad Rendi</h3>
-                        </div>
-                        <div class="display-kelas-2">
-                            <h3 class="font-view">A1</h3>
-                        </div>
-                        <div class="display-edit-2">
-                            <h3 class="font-view">edit</h3>
-                        </div>
-                        <div class="display-delete-2">
-                            <h3 class="font-view">delete</h3>
-                        </div>
-                    </div> -->
-
-
+                    <?php endforeach; ?>
                 </div>
            </div> 
         </div>

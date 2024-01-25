@@ -12,7 +12,9 @@
 
 .container-2{
     background-color: white;
-    width: 1300px;
+    /* nfoe */
+    width: 1600px;
+    height: 845px;
     border-radius: 5px;
 }
 
@@ -60,9 +62,10 @@
 }
 
 .ket-hal {
-    /* background-color: rebeccapurple; */
+    background-color: rebeccapurple;
     height: 50px;
-    width: 1136px;
+    /* noweinf */
+    width: 1600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +93,7 @@
 .ket-hal-2 {
     /* background-color: blue; */
     height: 50px;
-    width: 50px;
+    width: 140px;
     margin-left: 70px;
     display: flex;
     align-items: center;
@@ -142,9 +145,9 @@
 }
 
 .display-view {
-    /* background-color: red; */
+    background-color: red;
     height: 315px;
-    width: 1100px;
+    width: 1600px;
     display: flex;
     align-items: center;
     flex-direction: column;

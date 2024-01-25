@@ -8,7 +8,6 @@ class controllerFrekuensi {
 
 
     private function cekData($result){
-        echo $result;
         if($result != NULL){
             return true;
         }
@@ -27,6 +26,8 @@ class controllerFrekuensi {
 
         $stmt = $conn->prepare($query);
         $stmt->bind_param("ss", $stb, $frekuensi);
+
+        
 
         try{
             $stmt->execute();
