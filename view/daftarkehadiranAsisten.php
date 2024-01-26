@@ -82,42 +82,9 @@
             <div class="display-search">
                 <div class="ket-hal-3">
                     <input type="submit" name="submit" value="search" class="button">
-                    <!-- <button class="button">search</button> -->
                 </div>
             </div>
         </form>
-        <!-- <div class="display-input">
-            <div class="ket-hal-2">
-                <h3 class="font-ket-hal-2">NIM</h3>
-            </div>
-            <div class="column-input">
-                <input class="ket-column-input" type="text" placeholder="Masukkan NIM">
-            </div>
-        </div> -->
-        <!-- <div class="column-input-2">
-            <div class="display-input">
-                <div class="ket-hal-2">
-                    <h3 class="font-ket-hal-2">NIM</h3>
-                </div>
-                <div class="column-input">
-                    <input class="ket-column-input" type="text" placeholder="Masukkan NIM">
-                </div>
-            </div>
-            <div class="display-input">
-                <div class="ket-hal-2">
-                    <h3 class="font-ket-hal-2">Frekuensi</h3>
-                </div>
-                <div class="column-input">
-                    <input class="ket-column-input" type="text" placeholder="Masukkan Frekuensi">
-                </div>
-            </div>
-        </div> -->
-        <!-- <div class="display-search">
-            <div class="ket-hal-3">
-                <button class="button">search</button>
-            </div>
-        </div> -->
-
         <div class="display-view">
             <div class="display-view-1">
                 <div class="display-no">
@@ -168,7 +135,6 @@
                             <h4 class="font-pertemuan">10</h4>
                         </div>
                     </div>
-                    <!-- <h3 class="font-view">Jumlah Pertemuan</h3> -->
                 </div>
                 <div class="display-buka">
                     <h3 class="font-view">Edit</h3>

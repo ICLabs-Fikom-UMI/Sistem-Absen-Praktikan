@@ -1,3 +1,22 @@
+
+<?php
+// Tangkap data yang dikirim dari JavaScript
+    $receivedData = $_POST['data'];
+
+// Sekarang, Anda bisa melakukan apa pun yang Anda inginkan dengan $receivedData
+// Misalnya, Anda bisa menyimpannya di database atau memprosesnya sesuai kebutuhan aplikasi Anda.
+
+// Sekarang, kita akan mengirimkan kembali data yang diterima sebagai respons.
+
+    if(isset($receivedData) != NULL){
+        echo "Data yang diterima dari JavaScript: " . $receivedData;
+    }
+
+    echo $_COOKIE['gfg'];
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,38 +66,60 @@
         </div>
     </div>
 
-
-
-
-<!-- 
-    <script> 
-        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-      
-        scanner.addListener('scan', function (content) {
-          alert('Hasil Scanning: ' + content);
-          
-        });
-        
-        function startScanning() {
-          Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-              scanner.start(cameras[0]);
-            } else {
-              alert('Tidak ditemukan kamera.');
-            }
-          }).catch(function (e) {
-            console.error(e);
-          });
-        }
-    </script>   -->
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
     
             scanner.addListener('scan', function (content) {
                 alert('Hasil Scanning: ' + content);
+                // sendDataToPHP(content);
+                // createCookie("gfg", content);
+                $(document).ready(function () {
+                createCookie("gfg", "GeeksforGeeks", "10");
+                });
             });
+
+            
+
+            function createCookie(name, value, day) {
+                let expires;
+            
+                if (days) {
+                    let date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toGMTString();
+                }
+                else {
+                    expires = "";
+                }
+            
+                document.cookie = escape(name) + "=" +
+                    escape(value) + expires + "; path=/";
+            }
+
+
+
+            // function sendDataToPHP(content) {
+            //     // Membuat objek XMLHTTPRequest
+            //     var xhr = new XMLHttpRequest();
+
+            //     // Menentukan metode, URL, dan apakah akan dilakukan secara asinkron atau tidak
+            //     xhr.open('POST', 'scanAsisten.php', true);
+
+            //     // Mengatur tipe konten yang akan dikirim
+            //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            //     // Menangani respon dari server
+            //     xhr.onreadystatechange = function () {
+            //         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            //             // Respon dari server (jika diperlukan)
+            //             console.log(xhr.responseText);
+            //             // document.getElementById('result').innerHTML = xhr.responseText;
+            //         }
+            //     };
+            //     // // Mengirim data ke server
+            //     xhr.send('data=' +  encodeURIComponent(content));
+            // }
     
             function startScanning() {
                 Instascan.Camera.getCameras().then(function (cameras) {
