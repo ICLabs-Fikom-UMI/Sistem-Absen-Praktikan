@@ -6,7 +6,7 @@ class viewDataAbsen {
     private $stb;
     private $nama;
     private $kelas;
-    private $status;
+    private $status = array();
 
 
     public function setNo($no){
@@ -42,7 +42,7 @@ class viewDataAbsen {
     }
 
     public function setStatus($status){
-        $this->status = $status;
+        array_push($this->status, $status);
     }
 
     public function getStatus(){

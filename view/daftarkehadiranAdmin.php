@@ -182,31 +182,82 @@
           
                 <!-- batas  -->
                 <div class="display-view-2">
-                    <?php foreach ($result as $value) : ?>
 
                         <div class="display-view-3">
                             
                                     <div class="display-no-2">
                                     <h3 class="font-view">
-                                        <?php echo $value->getNo() ?>
+                                        <?php echo $result->getNo() ?>
                                     </h3>
                                 </div>
                                 <div class="display-NIM-2">
                                     <h3 class="font-view">
-                                        <?php echo $value->getStb() ?>
+                                        <?php echo $result->getStb() ?>
                                     </h3>
                                 </div>
                                 <div class="display-nama-2">
                                     <h3 class="font-view">
-                                        <?php echo $value->getNama() ?>
+                                        <?php echo $result->getNama() ?>
                                     </h3>
                                 </div>
                                 <div class="display-kelas-2">
                                     <h3 class="font-view">
-                                        <?php echo $value->getKelas() ?>
+                                        <?php echo $result->getKelas() ?>
                                     </h3>
                                 </div>
                                 <div class="display-pertemuan-22">
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[0] ?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[1] ?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[2] ?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[3]?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[4]?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[5]?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[6]?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[7]?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[8]?>
+                                            </h4>
+                                        </div>
+                                        <div class="display-jumlah-pertemuan-1">
+                                            <h4 class="font-pertemuan">
+                                                <?php echo $result->getStatus()[9]?>
+                                            </h4>
+                                        </div>
+                                </div>
+                                <!-- <div class="display-pertemuan-22">
                                     <div class="display-jumlah-pertemuan-1">
                                         <h4 class="font-pertemuan">H</h4>
                                     </div>
@@ -237,7 +288,7 @@
                                     <div class="display-jumlah-pertemuan-1">
                                         <h4 class="font-pertemuan">A</h4>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div>
                                     <button type="button" class="button-delete">Edit</button>
@@ -245,60 +296,7 @@
                                 <div>
                                     <button type="button" class="button-delete">Delete</button>
                                 </div>
-                        
-                            <!-- <div class="display-no-2">
-                                <h3 class="font-view">1</h3>
-                            </div>
-                            <div class="display-NIM-2">
-                                <h3 class="font-view">13020210048</h3>
-                            </div>
-                            <div class="display-nama-2">
-                                <h3 class="font-view">Ahmad Rendi</h3>
-                            </div>
-                            <div class="display-kelas-2">
-                                <h3 class="font-view">A1</h3>
-                            </div>
-                            <div class="display-pertemuan-22">
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">H</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                                <div class="display-jumlah-pertemuan-1">
-                                    <h4 class="font-pertemuan">A</h4>
-                                </div>
-                            </div>
-
-                            <div>
-                                <button type="button" class="button-delete">Edit</button>
-                            </div>
-                            <div>
-                                <button type="button" class="button-delete">Delete</button>
-                            </div> -->
                         </div>
-                    <?php endforeach; ?>
                     
 
                 </div>

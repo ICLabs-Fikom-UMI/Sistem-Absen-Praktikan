@@ -186,8 +186,9 @@ class controllerUser {
         $stmt->bind_param("ss", $stb, $frekuensi);
 
         $count = 0;
-        $resultArray = array();
+        // $resultArray = array();
         $objectFrekuensi = new controllerFrekuensi();
+        $objectViewDataAbsen = new viewDataAbsen();
 
         try{
             $objectFrekuensi->cariFrekuensi($stb, $frekuensi);
@@ -196,7 +197,7 @@ class controllerUser {
 
             while ($row = $result->fetch_assoc()){
 
-                $objectViewDataAbsen = new viewDataAbsen();
+                // $objectViewDataAbsen = new viewDataAbsen();
 
                 $count++;
                 $objectViewDataAbsen->setNo($count);
@@ -204,14 +205,15 @@ class controllerUser {
                 $objectViewDataAbsen->setNama($row['nama']);
                 $objectViewDataAbsen->setKelas($row['kelas']);
                 $objectViewDataAbsen->setStatus($row['status']);
-                array_push($resultArray, $objectViewDataAbsen);
+                // array_push($resultArray, $objectViewDataAbsen);
 
             }
         }catch(NotFoundException $exception){
             echo $exception->getMessage();
         }
         
-        return $resultArray;
+        // return $resultArray;
+        return $objectViewDataAbsen;
     }
 
 
