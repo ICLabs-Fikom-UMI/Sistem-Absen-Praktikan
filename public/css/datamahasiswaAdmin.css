@@ -12,7 +12,9 @@
 
 .container-2{
     background-color: white;
-    width: 1300px;
+    /* nfoe */
+    width: 1600px;
+    height: 845px;
     border-radius: 5px;
 }
 
@@ -60,9 +62,10 @@
 }
 
 .ket-hal {
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     height: 50px;
-    width: 1136px;
+    /* noweinf */
+    width: 1600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,29 +76,29 @@
     /* background-color: red; */
     height: 50px;
     width: 400px;
-    /* margin-top: 65px; */
+    margin-top: 65px;
     display: flex;
     /* padding-top: 40; */
-    /* flex-direction: column; */
 }
 
 .display-search {
-    background-color: black;
+    /* background-color: black; */
     height: 50px;
     width: 400px;
     margin-top: 10px;
     display: flex;
+    margin-left: 75px;
     /* padding-bottom: 100px; */
 }
 
 .ket-hal-2 {
     /* background-color: blue; */
     height: 50px;
-    width: 100px;
-    /* margin-left: 70px; */
+    width: 140px;
+    margin-left: 70px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .ket-hal-3 {
@@ -132,14 +135,6 @@
     border: 1px solid;
 }
 
-.column-input-2{
-    /* background-color: red; */
-    height: 100px;
-    width: 300px;
-    margin-left: 120px;
-    margin-top: 70px;
-}
-
 .button {
     height: 31px;
     width: 100px;
@@ -153,17 +148,17 @@
 .display-view {
     /* background-color: red; */
     height: 315px;
-    width: 1100px;
+    width: 1600px;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 2px;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 .display-view-1{
     /* background-color: aqua; */
-    height: 42px;
+    height: 27px;
     width: 900px;
     display: flex;
     gap: 5px;
@@ -187,7 +182,7 @@
 
 .display-no {
     background-color: #CAD6FF;
-    height: 38px;
+    height: 25px;
     width: 40px;
     border: 1px solid;
     display: flex;
@@ -206,8 +201,8 @@
 
 .display-NIM {
     background-color: #CAD6FF;
-    height: 38px;
-    width: 150px;
+    height: 25px;
+    width: 200px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -219,8 +214,8 @@
 
 .display-nama {
     background-color: #CAD6FF;
-    height: 38px;
-    width: 200px;
+    height: 25px;
+    width: 320px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -231,7 +226,7 @@
 
 .display-kelas {
     background-color: #CAD6FF;
-    height: 38px;
+    height: 25px;
     width: 125px;
     border: 1px solid;
     display: flex;
@@ -242,73 +237,10 @@
 }
 
 
-.display-pertemuan {
+.display-edit {
     background-color: #CAD6FF;
-    height: 40px;
-    width: 250px;
-    border: 1px solid;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-    border-radius: 5px;
-    /* padding-top: 3px; */
-    flex-direction: column;
-}
-
-.display-pertemuan-2{
-    background-color: #CAD6FF;
-    height: 18px;
-    width: 250px;
-    border: 1px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    /* padding-top: 3px; */
-}
-
-.display-pertemuan-3{
-    background-color: #CAD6FF;
-    height: 20px;
-    width: 250px;
-    border: 1px solid;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    border-radius: 5px;
-    /* padding-top: 3px; */
-}
-
-
-.display-jumlah-pertemuan {
-    height: 20px;
-    width: 25px;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.display-jumlah-pertemuan-1{
-    height: 26px;
-    width: 25px;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.font-pertemuan {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.display-buka {
-    background-color: #CAD6FF;
-    height: 38px;
-    width: 50px;
+    height: 25px;
+    width: 70px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -319,8 +251,8 @@
 
 .display-delete {
     background-color: #CAD6FF;
-    height: 38px;
-    width: 50px;
+    height: 25px;
+    width: 120px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -336,7 +268,7 @@
 } */
 
 .display-no-2{
-    /* background-color: white; */
+    /* background-color: red; */
     height: 28px;
     width: 40px;
     border: 1px solid;
@@ -347,9 +279,9 @@
     /* padding-top: 3px; */
 }
 .display-NIM-2{
-    /* background-color: white; */
+    /* background-color: red; */
     height: 25px;
-    width: 148px;
+    width: 200px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -361,7 +293,7 @@
 .display-nama-2{
     /* background-color: #CAD6FF; */
     height: 25px;
-    width: 198px;
+    width: 320px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -384,23 +316,23 @@
 
 
 
-.display-pertemuan-22 {
+.display-edit-2 {
     /* background-color: #CAD6FF; */
-    height: 28px;
-    width: 250px;
+    height: 25px;
+    width: 70px;
     border: 1px solid;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    /* padding-top: 3px; */
+    padding-top: 3px;
 }
 
 
-.display-buka-2 {
+.display-delete-2 {
     /* background-color: #CAD6FF; */
     height: 25px;
-    width: 50px;
+    width: 120px;
     border: 1px solid;
     display: flex;
     align-items: center;
@@ -412,14 +344,5 @@
 
 .scroll-view-data {
     overflow-y: auto;
-}
-
-.button-delete {
-    height: 29px;
-    width: 50px;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 

@@ -1,0 +1,132 @@
+.body-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image : url("../img/background.png");
+}
+
+.container-login{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.background-login{
+    background-color: #0C1740;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 600px;
+    width: 500px;
+}
+
+.background-login2 {
+    flex-direction: column;
+    background-color: #fcfdff;
+    height: 501px;
+    width: 500px;
+    border-radius: 15px;
+    display: flex;
+}
+
+.form-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 350px;
+}
+
+.border-input {
+    border-radius: 1px;
+}
+
+.background-logo{
+    display: flex;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.text-logo {
+    display: flex;
+    color: white;
+    font-size: 10px;
+    width: 100%;
+    height: 100px;
+    padding-left: 50px;
+}
+
+.text-login-2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: -18px;
+    font-family: 'Poppins', sans-serif;
+}
+.text-login-3{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-login {
+    width: 500px;
+    height: 200pxpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.display-form-login {
+    width: 500px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-input-NIM{
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+#input-NIM, #input-password {
+    height: 20px;
+    border-radius: 5px;
+    width: 292px;
+    padding: 5px;
+}
+
+.view-text-login {
+    height: 100%;
+    width: 200px;
+}
+
+.buton-login{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.size-text-login {
+    padding: 12px 70px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #0C1740;
+    border-radius: 25px;
+}

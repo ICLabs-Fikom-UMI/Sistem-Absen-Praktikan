@@ -180,7 +180,91 @@
             <div class="scroll-view-data" style="height: 250px;">
                 <!-- batas  -->
                 <div class="display-view-2">
-                    <div class="display-view-3">
+                    <?php foreach ($data as $value): ?>
+                        <?php for ( $i = 0; $i < 1; $i++): ?>
+                            <div class="display-view-3">
+                                <div class="display-no-2">
+                                    <h3 class="font-view">
+                                        <?php echo $result->getNo() ?>
+                                    </h3>
+                                </div>
+                                <div class="display-NIM-2">
+                                    <h3 class="font-view">
+                                        <?php echo $value['nama']; ?>
+                                    </h3>
+                                </div>
+                                <div class="display-nama-2">
+                                    <h3 class="font-view">
+                                        <?php echo $result->getNama() ?>
+                                    </h3>
+                                </div>
+                                <div class="display-kelas-2">
+                                    <h3 class="font-view">
+                                        <?php echo $result->getKelas() ?>
+                                    </h3>
+                                </div>
+                                <div class="display-pertemuan-22">
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[0] ?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[1] ?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[2] ?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[3]?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[4]?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[5]?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[6]?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[7]?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[8]?>
+                                        </h4>
+                                    </div>
+                                    <div class="display-jumlah-pertemuan-1">
+                                        <h4 class="font-pertemuan">
+                                            <?php echo $result->getStatus()[9]?>
+                                        </h4>
+                                    </div>
+                                </div>
+                                    <div>
+                                        <button type="button" class="button-delete">Edit</button>
+                                    </div>
+                                    <div>
+                                    <button type="button" class="button-delete">Delete</button>
+                                </div>
+                            </div>
+                        <?php endfor; ?>
+                    <?php endforeach; ?> 
+                    <!-- <div class="display-view-3">
                         <div class="display-no-2">
                             <h3 class="font-view">
                                 <?php echo $result->getNo() ?>
@@ -259,7 +343,7 @@
                             <div>
                             <button type="button" class="button-delete">Delete</button>
                         </div>
-                     </div>
+                     </div> -->
                 </div>
            </div> 
         </div>

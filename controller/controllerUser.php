@@ -32,7 +32,6 @@ class controllerUser {
         $password = $stb."-123";
 
         $conn = $objectConnect->getDB();
-        // $conn2 = $objectConnect->getDB();
 
         try{
 

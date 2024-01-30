@@ -1,24 +1,9 @@
-
-<?php
-
-include_once '../controller/controllerUser.php';
-    // Tangani permintaan AJAX
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['data'])) {
-        $data = $_POST['data'];
-        if ($data != NULL) {
-            echo "sampai";
-            $object = new controllerUser();
-            $object->update_absen($data);
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/scanAsisten.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/scanAsisten.css">
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <title>Document</title>
 </head>
@@ -26,7 +11,7 @@ include_once '../controller/controllerUser.php';
         <div class="container">
             <div class="container-logo-text">
                 <div class="logo">
-                    <img src="../view/asset/image/logo.png" alt="" height="40px">
+                    <img src="<?= BASEURL ?>/img/logo.png" alt="" height="40px">
                 </div>
                 <div class="text-logo">
                     <h4 style="color: white;">Sistem Absen Praktikan</h4>
@@ -35,19 +20,19 @@ include_once '../controller/controllerUser.php';
 
             <div class="display-select">
                 <div class="select">
-                    <a href="daftarkehadiranAsisten.php" class="font-select">Daftar Kehadiran</a>
+                    <a href="<?= BASEURL; ?>/Asisten/kehadiran" class="font-select">Daftar Kehadiran</a>
                 </div>
                 <div class="select">
-                    <a href="daftarperizinanAsisten.php" class="font-select">Daftar Perizinan</a>
+                    <a href="<?= BASEURL; ?>/Asisten/daftarPerizinan" class="font-select">Daftar Perizinan</a>
                 </div>
                 <div class="select">
-                    <a href="perizinanAsisten.php" class="font-select">Perizinan</a>
+                    <a href="<?= BASEURL; ?>/Asisten/perizinan" class="font-select">Perizinan</a>
                 </div>
                 <div class="select">
-                    <a href="buatbarcodeAsisten.php" class="font-select">Buat Barcode</a>
+                    <a href="<?= BASEURL; ?>/Asisten/barkode" class="font-select">Buat Barcode</a>
                 </div>
                 <div class="select">
-                    <a href="scanAsisten.php" class="font-select">Scan</a>
+                    <a href="<?= BASEURL; ?>/Asisten/scan" class="font-select">Scan</a>
                 </div>
             </div>
         </div>
@@ -67,29 +52,23 @@ include_once '../controller/controllerUser.php';
             let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
         
             scanner.addListener('scan', function (content) {
-                // alert('Hasil Scanning: ' + content);
-                sendDataToPHP(content); // Panggil fungsi untuk mengirim data ke PHP
+                alert('Hasil Scanning: ' + content);
+                sendDataToPHP(content); 
             });
 
             function sendDataToPHP(content) {
-                // Membuat objek XMLHTTPRequest
                 var xhr = new XMLHttpRequest();
 
-                // Menentukan metode, URL, dan apakah akan dilakukan secara asinkron atau tidak
-                xhr.open('POST', "<?= BASEURL ?>/Asisten/scan", true);
+                xhr.open('POST', "<?= BASEURL ?>/Asisten/data", true);
 
-                // Mengatur tipe konten yang akan dikirim
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-                // Menangani respon dari server
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                        // Tampilkan respons dari server (jika diperlukan)
                         console.log(xhr.responseText);
                     }
                 };
 
-                // Mengirim data ke server
                 xhr.send('data=' + encodeURIComponent(content));
             }
         

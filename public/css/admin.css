@@ -1,0 +1,63 @@
+.body {
+    display: flex;
+    background-color: #0C1740;
+    padding: 10px;
+}
+
+.container {
+    background-color: #0C1740;
+    height: 640px;
+    width: 300px;
+}
+
+.container-23{
+    /* background-color: white; */
+    height: 830px;
+    width: 1580px;
+    background-image: url("../img/background.png");
+    border-radius: 5px;
+}
+
+.container-logo-text {
+    display: flex;
+    height: 50px;
+    width: 300px;
+    align-items: center;
+}
+
+.logo{
+    height: 40px;
+    width: 55px;
+}
+.text-logo {
+    height: 45px;
+    width: 122px;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-select {
+    height: 250px;
+    width: 240px;
+    display: flex;
+    margin: 50px 60px;
+    flex-direction: column;
+    color: white;
+    gap: 30px;
+    justify-content: center;
+}
+
+.select {
+    height:25px;
+    width: 200px;
+}
+
+.font-select {
+    font-size: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+

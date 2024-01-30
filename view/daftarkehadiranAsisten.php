@@ -224,7 +224,7 @@
                                 <button type="button" class="button-delete">Edit</button>
                             </div>
                             <div>
-                            <button type="button" class="button-delete">Delete</button>
+                                <button type="button" class="button-delete">Delete</button>
                         </div>
                     </div>
                 </div>
