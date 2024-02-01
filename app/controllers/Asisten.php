@@ -1,65 +1,95 @@
 <?php
-
+session_start();
 
 class Asisten extends Controller {
 
     public function index(){
-        $this->view('template/asisten/headerDashoard');
-        $this->view('asisten/dashboardAsisten');
-        $this->view('template/asisten/footer');
+        if($_SESSION['asisten']){
+            $this->view('template/asisten/headerDashoard');
+            $this->view('asisten/dashboardAsisten');
+            $this->view('template/asisten/footer');
+        }
+        else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
     }
 
     public function Kehadiran(){
 
-        $data['mhs'] = $this->model('User')->getDataAbsen($_POST);
-        $groupedData = array();
+        if($_SESSION['asisten']){
+            $data['mhs'] = $this->model('User')->getDataAbsen($_POST);
+            $groupedData = array();
 
-        foreach ($data['mhs'] as $value) {
-            $key = $value['nama'] . '-' . $value['stb'] . '-' . $value['kelas'];
+            foreach ($data['mhs'] as $value) {
+                $key = $value['nama'] . '-' . $value['stb'] . '-' . $value['kelas'];
 
-            if (!isset($groupedData[$key])) {
-                $groupedData[$key] = array(
-                    'nama' => $value['nama'],
-                    'stb' => $value['stb'],
-                    'kelas' => $value['kelas'],
-                    'status' => array_fill(0, 10, '') 
-                );
+                if (!isset($groupedData[$key])) {
+                    $groupedData[$key] = array(
+                        'nama' => $value['nama'],
+                        'stb' => $value['stb'],
+                        'kelas' => $value['kelas'],
+                        'status' => array_fill(0, 10, '') 
+                    );
+                }
+
+                $index = array_search('', $groupedData[$key]['status']);
+
+                if ($index !== false) {
+                    $groupedData[$key]['status'][$index] = $value['status'];
+                }
             }
 
-            $index = array_search('', $groupedData[$key]['status']);
+            $groupedData = array_values($groupedData);
+            
+            $data['mhst'] = $groupedData;
 
-            if ($index !== false) {
-                $groupedData[$key]['status'][$index] = $value['status'];
-            }
+            $this->view('template/asisten/headerDaftarKehadiran');
+            $this->view('asisten/daftarkehadiranAsisten', $data);
+            $this->view('template/asisten/footer');
         }
-
-        $groupedData = array_values($groupedData);
-        
-        $data['mhst'] = $groupedData;
-
-        $this->view('template/asisten/headerDaftarKehadiran');
-        $this->view('asisten/daftarkehadiranAsisten', $data);
-        $this->view('template/asisten/footer');
+        else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
     }
 
     public function daftarPerizinan(){
-        $data['mhs'] = $this->model('User')->daftarPerizinan($_POST);
-        $this->view('asisten/daftarperizinanAsisten', $data);
+        if($_SESSION['asisten']){
+            $data['mhs'] = $this->model('User')->daftarPerizinan($_POST);
+            $this->view('asisten/daftarperizinanAsisten', $data);
+        }
+        else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
     }
 
     public function perizinan(){
-        $this->model('User')->buatPerizinan($_POST, $_FILES);
-        $this->view('asisten/perizinanAsisten');
+        if($_SESSION['asisten']){
+            $this->model('User')->buatPerizinan($_POST, $_FILES);
+            $this->view('asisten/perizinanAsisten');
+        }
+        else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
     }
 
     public function barkode(){
-        $data = $this->model('User')->buatBarcode($_POST);
+        if($_SESSION['asisten']){
+            $data = $this->model('User')->buatBarcode($_POST);
 
-        $this->view('asisten/buatbarcodeAsisten', $data);
+            $this->view('asisten/buatbarcodeAsisten', $data);
+        }
+        else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
     }
 
     public function scan(){
-        $this->view('asisten/scanAsisten');
+        if($_SESSION['asisten']){
+            $this->view('asisten/scanAsisten');
+        }
+        else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
     }
 
     public function data(){

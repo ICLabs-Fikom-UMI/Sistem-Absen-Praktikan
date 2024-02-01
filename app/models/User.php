@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 class User {
 
     private $db;
@@ -18,19 +20,10 @@ class User {
         WHERE tbl_frekuensi_matkul.frekuensi =:frekuensi
         ";  
         $this->db->query($query);
+
         $this->db->bind('frekuensi', $cari);
         return $this->db->resultSet();
     }
-
-    // public function insertData($nama, $stb, $kodeKelas, $frekuensi){
-    //     $query1 = "INSERT INTO tbl_user(stb, kode_kelas, nama,passwords, jenis_user) VALUES (?, ?, ?, $stb . '123', 'PRAKTIKAN')";
-    //     $query2 = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUES (?,?)";
-    //     $this->db->query($query1);
-    //     $this->db->bind('sss', $nama, $kodeKelas, $frekuensi);
-
-    //     $this->db->query($query2);
-    //     $this->db->bind('ss', $stb, $frekuensi);
-    // }
 
     public function insertData($data){
         $query1 = "INSERT INTO tbl_user(stb, kode_kelas, nama,passwords, jenis_user)
@@ -148,6 +141,20 @@ class User {
         }catch(Exception $exception){
             echo $exception->getMessage();
         }
+    }
 
+    public function login($data){
+
+        $query = "SELECT login(:stb, :passwords) AS result";
+
+        $this->db->query($query);
+        $this->db->bind('stb', $data['stb']);
+        $this->db->bind('passwords', $data['password']);        
+        try{
+            $data = $this->db->single();
+            return $data;
+        }catch(Exception $exception){
+            // echo $exception->getMessage();
+        }
     }
 }

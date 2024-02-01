@@ -1,5 +1,3 @@
-
-
     <div class="container-login">
 
         <div class="background-login">
@@ -25,17 +23,18 @@
                     <h1>LOGIN</h1>
                 </div>
                 <div class="display-form-login">
-                    <form action="" class="form-home" >
+                    <form action="<?= BASEURL;?>/Login/session"  method="post" class="form-home" >
                         <div class="display-input-NIM">
                             <label for="NIM">Masukkan NIM</label>
-                            <input id="input-NIM" type="text" name="" class="border-input" placeholder="NIM">
+                            <input id="input-NIM" type="text" name="stb" class="border-input" placeholder="NIM">
                         </div>
                         <div class="display-input-NIM">
                             <label for="NIM">Masukkan Password</label>
-                            <input id="input-password" type="password" name="" class="border-input" placeholder="Password">
+                            <input id="input-password" type="password" name="password" class="border-input" placeholder="Password">
                         </div>
                         <div class="buton-login">
-                            <button class="size-text-login" type="submit">LOGIN</button>
+                            <input type="submit" class="size-text-login" value="LOGIN">
+                            <!-- <button class="size-text-login" type="submit">LOGIN</button> -->
                         </div>
                     </form>
                 </div>

@@ -1,19 +1,36 @@
 <?php
 
+session_start();
+
 class Praktikan extends Controller{
 
 
     public function index(){
-        $this->view('praktikan/dashboarprak');
+        if($_SESSION['praktikan']){
+            $this->view('praktikan/dashboarprak');
+        }else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
+        
     }
 
     public function perizinan(){
-        $this->model('User')->buatPerizinan($_POST, $_FILES);
-        $this->view('praktikan/perizinanPrak');
+        if($_SESSION['praktikan']){
+            $this->model('User')->buatPerizinan($_POST, $_FILES);
+            $this->view('praktikan/perizinanPrak');
+        }{
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
+       
     }
 
     public function barcode(){
-        $data = $this->model('User')->buatBarcode($_POST);
-        $this->view('praktikan/buatbarcodePrak', $data);
+        if($_SESSION['praktikan']){
+            $data = $this->model('User')->buatBarcode($_POST);
+            $this->view('praktikan/buatbarcodePrak', $data);
+        }else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
+        
     }
 }

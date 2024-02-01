@@ -58,6 +58,7 @@
     font-size: 20px;
     color: white;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
 }
 
 .ket-hal {
@@ -341,5 +342,24 @@
 
 .scroll-view-data {
     overflow-y: auto;
+}
+
+
+.out {
+    /* background-color: blue; */
+    height: 400px;
+    width: 200px;
+    /* margin-bottom: 200px; */
+    padding-bottom: 50px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: end;
+}
+
+.text-out{
+    size: 50px;
+    color: white;
+    text-decoration: none;
 }
 

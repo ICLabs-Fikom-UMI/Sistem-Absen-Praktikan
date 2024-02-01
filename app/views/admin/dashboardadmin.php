@@ -22,6 +22,9 @@
                 <a href="<?= BASEURL; ?>/Admin/daftarPerizinan" class="font-select">Daftar Perizinan</a>
             </div>
         </div>
+        <div class="out">
+            <a class="text-out" href="<?= BASEURL;?>/Login/index">logout</a>
+        </div>
     </div>
     <div class="container-23">
         

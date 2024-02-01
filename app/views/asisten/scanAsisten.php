@@ -35,6 +35,9 @@
                     <a href="<?= BASEURL; ?>/Asisten/scan" class="font-select">Scan</a>
                 </div>
             </div>
+            <div class="out">
+            <a class="text-out" href="<?= BASEURL;?>/Login/index">logout</a>
+            </div>
         </div>
         <div class="container-2">
             <div class="ket-hal">
@@ -43,6 +46,7 @@
             <div class="scan">
                 <div class="scan-2">
                     <video id="preview"></video>
+                    <audio id="scanSound" src="<?= BASEURL?>/music/Bike Ride.mp3"></audio>
                 </div>
             </div>
         </div>
@@ -52,8 +56,9 @@
             let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
         
             scanner.addListener('scan', function (content) {
-                alert('Hasil Scanning: ' + content);
-                sendDataToPHP(content); 
+                // alert('Hasil Scanning: ' + content);
+                sendDataToPHP(content);
+                playScanSound(); 
             });
 
             function sendDataToPHP(content) {
@@ -70,6 +75,11 @@
                 };
 
                 xhr.send('data=' + encodeURIComponent(content));
+            }
+
+            function playScanSound() {
+            let audio = document.getElementById('scanSound');
+            audio.play();
             }
         
             function startScanning() {

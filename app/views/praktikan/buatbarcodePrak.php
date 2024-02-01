@@ -26,6 +26,9 @@
                 <a href="<?= BASEURL ?>/Praktikan/barcode" class="font-select">Buat Barcode</a>
             </div>
         </div>
+        <div class="out">
+            <a class="text-out" href="<?= BASEURL;?>/Login/index">logout</a>
+        </div>
     </div>
     <div class="container-2">
         <div class="ket-hal">

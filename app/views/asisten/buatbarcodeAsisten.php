@@ -35,6 +35,9 @@
                 <a href="<?= BASEURL; ?>/Asisten/scan" class="font-select">Scan</a>
             </div>
         </div>
+        <div class="out">
+            <a class="text-out" href="<?= BASEURL;?>/Login/index">logout</a>
+        </div>
     </div>
     <div class="container-2">
         <div class="ket-hal">
