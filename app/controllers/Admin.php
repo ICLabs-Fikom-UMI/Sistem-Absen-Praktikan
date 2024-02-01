@@ -96,5 +96,14 @@ class Admin extends Controller {
        
     }
 
+    public function deleteData($stb){
+        $this->model('User')->deleteAbsen($stb);
+        $this->daftarAbsen();
+    }
+
+    public function deleteDataMahasiswa($stb){
+        $this->model('User')->deleteDatamahasiswa($stb);
+        $this->dataMahasiswa();
+    }
 
 }

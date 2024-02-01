@@ -151,10 +151,10 @@
                                     <?php endforeach ?>
                                 </div>
                                     <div>
-                                        <button type="button" class="button-delete">Edit</button>
+                                        <button type="button" class="button-edit">Edit</button>
                                     </div>
                                     <div>
-                                    <button type="button" class="button-delete">Delete</button>
+                                    <a class="button-delete" type="button" href="<?= BASEURL; ?>/Asisten/deleteData/<?= $value['stb'] ?>">Delete</a>
                                 </div>
                             </div>
                     <?php endforeach; ?>  

@@ -157,4 +157,31 @@ class User {
             // echo $exception->getMessage();
         }
     }
+
+    public function deleteAbsen($stbk){
+
+        $query = "CALL deleteAbsenUseKodeFrekuensi(:stbk)";
+
+        $this->db->query($query);
+        $this->db->bind('stbk', $stbk);
+
+        try{
+            $this->db->execute();
+        }catch(Exception $exception){
+            echo $exception->getMessage();
+        }
+    }
+
+    public function deleteDatamahasiswa($stbk){
+        $query = "CALL deleteDataMahasiswa(:stbk)";
+
+        $this->db->query($query);
+        $this->db->bind('stbk', $stbk);
+
+        try{
+            $this->db->execute();
+        }catch(Exception $exception){
+            echo $exception->getMessage();
+        }
+    }
 }

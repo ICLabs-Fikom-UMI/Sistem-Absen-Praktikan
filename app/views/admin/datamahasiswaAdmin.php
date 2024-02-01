@@ -100,7 +100,7 @@
                                 <h3 class="font-view">edit</h3>
                             </div>
                             <div class="display-delete-2">
-                                <h3 class="font-view">delete</h3>
+                            <a class="button-delete" style="background-color: red; text-decoration: none; color: white;" href="<?= BASEURL; ?>/Admin/deleteDataMahasiswa/<?= $value['stb'] ?>">Delete</a>
                             </div>
                         </div>
 

@@ -97,5 +97,10 @@ class Asisten extends Controller {
         $this->model('User')->updateAbsen($data);
     }
 
+    public function deleteData($stb){
+        $this->model('User')->deleteAbsen($stb);
+        $this->Kehadiran();
+    }
+
 
 }

@@ -18,7 +18,7 @@ class Praktikan extends Controller{
         if($_SESSION['praktikan']){
             $this->model('User')->buatPerizinan($_POST, $_FILES);
             $this->view('praktikan/perizinanPrak');
-        }{
+        }else{
             header('Location: http://localhost/tubes/public/Login/index');
         }
        
