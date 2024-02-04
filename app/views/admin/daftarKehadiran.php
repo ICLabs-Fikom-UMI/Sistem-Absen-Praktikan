@@ -126,43 +126,44 @@
                         </div>
                         <div class="modal-body">
                             <?php foreach ($data['mhst'] as $value): ?>
-                                    <form method="post" action="<?= BASEURL;?>/Admin/updateDataAbsen">
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">NIM:</label>
-                                    <input type="text" class="form-control" name="stb" value="<?php echo $value['stb'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Nama:</label>
-                                    <input type="text" class="form-control" name="nama" value="<?php echo $value['nama'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                    <input type="text" class="form-control" name="kelas" value="<?php echo $value['kelas'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                    <input type="text" class="form-control" name="frekuensi" value="<?php echo $value['frekuensi'] ?>">
-                                </div>
-                                
-                                    <?php foreach ($value['status'] as $status): ?>
-                                        <td>
-                                            <?php
-                                                $i;
-                                                $i++;
-                                                echo "Pertemuan " . $i;
-                                            ?>
-                                            <select class="form-select" aria-label="Default select example" name="status[]">
-                                            <option selecteds style="width: 200px; !important"> <?php echo $status; ?></option>
-                                            <option value="A">A</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                            <option value="S">S</option>
-                                            </select>
-                                        </td>
-                                    <?php endforeach; ?>
-                                <div class="modal-footer">
-                                    <input type="submit" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" data-bs-dismiss="modal" value="Simpan">
-                                </div>
+                                <form method="post" action="<?= BASEURL;?>/Admin/updateDataAbsen">
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">NIM:</label>
+                                        <input type="text" class="form-control" name="stb" value="<?php echo $value['stb'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Nama:</label>
+                                        <input type="text" class="form-control" name="nama" value="<?php echo $value['nama'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Kelas:</label>
+                                        <input type="text" class="form-control" name="kelas" value="<?php echo $value['kelas'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Kelas:</label>
+                                        <input type="text" class="form-control" name="frekuensi" value="<?php echo $value['frekuensi'] ?>">
+                                    </div>
+                                    
+                                        <?php foreach ($value['status'] as $status): ?>
+                                            <td>
+                                                <?php
+                                                    $i;
+                                                    $i++;
+                                                    echo "Pertemuan " . $i;
+                                                ?>
+                                                <select class="form-select" aria-label="Default select example" name="status[]">
+                                                <option selecteds style="width: 200px; !important"> <?php echo $status; ?></option>
+                                                <option value="A">A</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                                <option value="S">S</option>
+                                                </select>
+                                            </td>
+                                        <?php endforeach; ?>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" data-bs-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label">Simpan</button>
+                                    </div>
                                 </form>
                             <?php endforeach; ?>
                         </div>

@@ -46,6 +46,7 @@ class Admin extends Controller {
         if($_SESSION['admin']){
             $search = $_POST['cari'];
             $data['mhs'] = $this->model('User')->getDataMahasiswa($search);
+
             $this->view('template/header');
             $this->view('admin/dataMahasiswa', $data);
             $this->view('template/footer');
@@ -105,8 +106,6 @@ class Admin extends Controller {
         }else {
             header('Location: http://localhost/tubes/public/Login/index');
         }
-
-       
     }
 
     public function deleteData($stb){
@@ -116,12 +115,17 @@ class Admin extends Controller {
 
     public function deleteDataMahasiswa($stb){
         $this->model('User')->deleteDatamahasiswa($stb);
-        $this->dataMahasiswa();
+        $this->dataMahasiswa();  
     }
 
     public function updateDataAbsen(){
         $this->model('User')->updateDataAbsen($_POST);
         $this->daftarAbsen();
+    }
+
+    public function updateDataMahasiswa(){
+        $this->model('User')->updateDataMahasiswa($_POST);
+        $this->dataMahasiswa();
     }
 
 

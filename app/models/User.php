@@ -13,7 +13,8 @@ class User {
 
     public function getDataMahasiswa($cari){
 
-        $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas
+        $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas,
+                tbl_frekuensi_matkul.frekuensi, tbl_kelas.kode_kelas
         FROM tbl_frekuensi_matkul
         INNER JOIN tbl_user ON tbl_frekuensi_matkul.stb = tbl_user.stb
         INNER JOIN tbl_kelas ON tbl_user.kode_kelas = tbl_kelas.kode_kelas
@@ -37,13 +38,13 @@ class User {
         $this->db->bind('namas', $data['nama']);
         $this->db->bind('passwords', $data['NIM'] . "-123");
 
-        $this->db2->query($query2);
-        $this->db2->bind('stbkk', $data['NIM']);
-        $this->db2->bind('frekuensi', $data['frekuensi']);
+        // $this->db2->query($query2);
+        // $this->db2->bind('stbkk', $data['NIM']);
+        // $this->db2->bind('frekuensi', $data['frekuensi']);
 
         try{
             $this->db->execute();
-            $this->db2->execute();
+            // $this->db2->execute();
         }catch (Exception $exception){
             // echo $exception->getMessage();
         }
@@ -53,7 +54,8 @@ class User {
     public function getDataAbsen($data){
         if($data['stb'] != NULL){
 
-            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas, tbl_absen.status, tbl_frekuensi_matkul.frekuensi
+            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas,
+                        tbl_absen.status, tbl_frekuensi_matkul.frekuensi
                 FROM tbl_absen
                 INNER JOIN tbl_frekuensi_matkul ON tbl_frekuensi_matkul.kode_frekuensi = tbl_absen.kode_frekuensi
                 INNER JOIN tbl_user ON tbl_frekuensi_matkul.stb = tbl_user.stb
@@ -194,7 +196,7 @@ class User {
         $status = $data['status'];
         $i = 0;
         foreach ($status as $value){
-            
+
             $this->db->query($query);
             $this->db->bind('stb', $stb);
             $this->db->bind('frekuensi', $frekuensi);
@@ -208,14 +210,26 @@ class User {
             }
 
             $i++;
-
-
         }
+    }
+    
+    
+    public function updateDataMahasiswa($data){
+        $query = "CALL updateDataMahasiswa(:stb, :frekuensi, :frekuensiBaru, :nama, :kelas)";
 
 
+        $this->db->query($query);
 
-       
-
-        
+        $this->db->bind('stb', $data['stb']);
+        $this->db->bind('frekuensi', $data['frekuensi']);
+        $this->db->bind('frekuensiBaru', $data['frekuensiBaru']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('kelas', $data['kelas']);
+    
+        try{
+            $this->db->execute();
+        }catch(Exception $exception){
+            echo $exception->getMessage();
+        }
     }
 }
