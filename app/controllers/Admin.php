@@ -31,7 +31,7 @@ class Admin extends Controller {
 
     public function inputDataPraktikan(){
         if($_SESSION['admin']){
-            // $this->model('User')->insertData($_POST);
+            $this->model('User')->insertDataPraktikum($_POST);
 
             $this->view('template/header');
             $this->view('admin/inputDataPraktikan');

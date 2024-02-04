@@ -30,21 +30,30 @@ class User {
         $query1 = "INSERT INTO tbl_user(stb, kode_kelas, nama,passwords, jenis_user)
          VALUES (:stbk, :kodeKelas, :namas, :passwords , 'PRAKTIKAN')";
 
-        $query2 = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUES (:stbkk, :frekuensi)";
+        
 
         $this->db->query($query1);
         $this->db->bind('stbk', $data['stb']);
         $this->db->bind('kodeKelas', $data['kodeKelas']);
         $this->db->bind('namas', $data['nama']);
         $this->db->bind('passwords', $data['stb'] . "-123");
-
-        // $this->db2->query($query2);
-        // $this->db2->bind('stbkk', $data['NIM']);
-        // $this->db2->bind('frekuensi', $data['frekuensi']);
-
         try{
             $this->db->execute();
-            // $this->db2->execute();
+        }catch (Exception $exception){
+            // echo $exception->getMessage();
+        }
+    }
+
+    public function insertDataPraktikum($data){
+
+        $query2 = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUES (:stbkk, :frekuensi)";
+
+        $this->db2->query($query2);
+        $this->db2->bind('stbkk', $data['stb']);
+        $this->db2->bind('frekuensi', $data['frekuensi']);
+
+        try{
+            $this->db2->execute();
         }catch (Exception $exception){
             echo $exception->getMessage();
         }
