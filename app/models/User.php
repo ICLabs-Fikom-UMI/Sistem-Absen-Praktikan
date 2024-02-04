@@ -53,7 +53,7 @@ class User {
     public function getDataAbsen($data){
         if($data['stb'] != NULL){
 
-            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas, tbl_absen.status
+            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas, tbl_absen.status, tbl_frekuensi_matkul.frekuensi
                 FROM tbl_absen
                 INNER JOIN tbl_frekuensi_matkul ON tbl_frekuensi_matkul.kode_frekuensi = tbl_absen.kode_frekuensi
                 INNER JOIN tbl_user ON tbl_frekuensi_matkul.stb = tbl_user.stb
@@ -65,7 +65,7 @@ class User {
             return $this->db->resultSet();
         }else {
 
-            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas, tbl_absen.status
+            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas, tbl_absen.status, tbl_frekuensi_matkul.frekuensi
             FROM tbl_absen
             INNER JOIN tbl_frekuensi_matkul ON tbl_frekuensi_matkul.kode_frekuensi = tbl_absen.kode_frekuensi
             INNER JOIN tbl_user ON tbl_frekuensi_matkul.stb = tbl_user.stb
@@ -183,5 +183,39 @@ class User {
         }catch(Exception $exception){
             echo $exception->getMessage();
         }
+    }
+
+    public function updateDataAbsen($data){
+
+        $query = "CALL updateTableAbsen(:stb, :frekuensi, :value, :interasi)";
+
+        $stb = $data['stb'];
+        $frekuensi = $data['frekuensi'];
+        $status = $data['status'];
+        $i = 0;
+        foreach ($status as $value){
+            
+            $this->db->query($query);
+            $this->db->bind('stb', $stb);
+            $this->db->bind('frekuensi', $frekuensi);
+            $this->db->bind('value', $value);
+            $this->db->bind('interasi', $i);
+    
+            try{
+                $this->db->execute();
+            }catch(Exception $exception){
+                echo $exception->getMessage();
+            }
+
+            $i++;
+
+
+        }
+
+
+
+       
+
+        
     }
 }

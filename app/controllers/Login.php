@@ -6,14 +6,13 @@ class Login extends Controller{
 
     public function index(){
         session_destroy();
-        $this->view('template/login/header');
+        $this->view('template/header');
         $this->view('login/login');
-        $this->view('template/login/footer');
+        $this->view('template/footer');
     }
 
 
     public function session(){
-
         $data = $this->model('User')->login($_POST);
         $result = $data['result'];
         if($result == "ADMIN"){

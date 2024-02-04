@@ -5,9 +5,9 @@ class Asisten extends Controller {
 
     public function index(){
         if($_SESSION['asisten']){
-            $this->view('template/asisten/headerDashoard');
-            $this->view('asisten/dashboardAsisten');
-            $this->view('template/asisten/footer');
+            $this->view('template/header');
+            $this->view('asisten/daftarKehadiran', $data);
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
@@ -43,9 +43,9 @@ class Asisten extends Controller {
             
             $data['mhst'] = $groupedData;
 
-            $this->view('template/asisten/headerDaftarKehadiran');
-            $this->view('asisten/daftarkehadiranAsisten', $data);
-            $this->view('template/asisten/footer');
+            $this->view('template/header');
+            $this->view('asisten/daftarKehadiran', $data);
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
@@ -55,7 +55,9 @@ class Asisten extends Controller {
     public function daftarPerizinan(){
         if($_SESSION['asisten']){
             $data['mhs'] = $this->model('User')->daftarPerizinan($_POST);
-            $this->view('asisten/daftarperizinanAsisten', $data);
+            $this->view('template/header');
+            $this->view('asisten/daftarPerizinan', $data);
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
@@ -65,7 +67,9 @@ class Asisten extends Controller {
     public function perizinan(){
         if($_SESSION['asisten']){
             $this->model('User')->buatPerizinan($_POST, $_FILES);
-            $this->view('asisten/perizinanAsisten');
+            $this->view('template/header');
+            $this->view('asisten/perizinan');
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
@@ -76,7 +80,9 @@ class Asisten extends Controller {
         if($_SESSION['asisten']){
             $data = $this->model('User')->buatBarcode($_POST);
 
-            $this->view('asisten/buatbarcodeAsisten', $data);
+            $this->view('template/header');
+            $this->view('asisten/barcode', $data);
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
@@ -85,7 +91,9 @@ class Asisten extends Controller {
 
     public function scan(){
         if($_SESSION['asisten']){
-            $this->view('asisten/scanAsisten');
+            $this->view('template/header');
+            $this->view('asisten/scan');
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');

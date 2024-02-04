@@ -6,9 +6,9 @@ class Admin extends Controller {
 
     public function index(){
         if($_SESSION['admin']){
-            $this->view('template/admin/headerDashboard');
-            $this->view('admin/dashboardadmin');
-            $this->view('template/admin/footer');
+            $this->view('template/header');
+            $this->view('admin/inputDataMahasiswa');
+            $this->view('template/footer');
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
@@ -19,24 +19,36 @@ class Admin extends Controller {
     public function inputData(){
 
         if($_SESSION['admin']){
-            $this->model('User')->insertData($_POST);
+            // $this->model('User')->insertData($_POST);
 
-            $this->view('template/admin/headerInputData');
-            $this->view('admin/inputdata');
-            $this->view('template/admin/footer');
+            $this->view('template/header');
+            $this->view('admin/inputDataMahasiswa');
+            $this->view('template/footer');
         }else {
             header('Location: http://localhost/tubes/public/Login/index');
         }
         
     }
 
+    public function inputDataPraktikan(){
+        if($_SESSION['admin']){
+            // $this->model('User')->insertData($_POST);
+
+            $this->view('template/header');
+            $this->view('admin/inputDataPraktikan');
+            $this->view('template/footer');
+        }else {
+            header('Location: http://localhost/tubes/public/Login/index');
+        }
+    }
+
     public function dataMahasiswa(){
         if($_SESSION['admin']){
             $search = $_POST['cari'];
             $data['mhs'] = $this->model('User')->getDataMahasiswa($search);
-            $this->view('template/admin/headerDataMahasiswa');
-            $this->view('admin/datamahasiswaAdmin', $data);
-            $this->view('template/admin/footer');
+            $this->view('template/header');
+            $this->view('admin/dataMahasiswa', $data);
+            $this->view('template/footer');
         }else {
             header('Location: http://localhost/tubes/public/Login/index');
         }
@@ -56,6 +68,7 @@ class Admin extends Controller {
                         'nama' => $value['nama'],
                         'stb' => $value['stb'],
                         'kelas' => $value['kelas'],
+                        'frekuensi' => $value['frekuensi'],
                         'status' => array_fill(0, 10, '') 
                     );
                 }
@@ -71,9 +84,9 @@ class Admin extends Controller {
             
             $data['mhst'] = $groupedData;
 
-            $this->view('template/admin/headerDaftarkehadiran');
-            $this->view('admin/daftarkehadiranAdmin', $data);
-            $this->view('template/admin/footer');
+            $this->view('template/header');
+            $this->view('admin/daftarKehadiran', $data);
+            $this->view('template/footer');
         }else {
             header('Location: http://localhost/tubes/public/Login/index');
         }
@@ -86,9 +99,9 @@ class Admin extends Controller {
         if($_SESSION['admin']){
             $data['mhs'] = $this->model('User')->daftarPerizinan($_POST);
 
-            $this->view('template/admin/headerDafterPerizinan');
-            $this->view('admin/daftarperizinanAdmin', $data);
-            $this->view('template/admin/footer');   
+            $this->view('template/header');
+            $this->view('admin/daftarPerizinan', $data);
+            $this->view('template/footer');  
         }else {
             header('Location: http://localhost/tubes/public/Login/index');
         }
@@ -105,5 +118,11 @@ class Admin extends Controller {
         $this->model('User')->deleteDatamahasiswa($stb);
         $this->dataMahasiswa();
     }
+
+    public function updateDataAbsen(){
+        $this->model('User')->updateDataAbsen($_POST);
+        $this->daftarAbsen();
+    }
+
 
 }

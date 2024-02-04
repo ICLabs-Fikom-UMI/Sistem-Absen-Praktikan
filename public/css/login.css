@@ -1,13 +1,17 @@
 .body-login {
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-image : url("../img/background.png");
+    align-items: center;
+    height: 100ch;
+    width: 100%; 
 }
 
 .container-login{
+    /* background-color: black; */
     display: flex;
     justify-content: space-between;
 }
