@@ -33,10 +33,10 @@ class User {
         $query2 = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUES (:stbkk, :frekuensi)";
 
         $this->db->query($query1);
-        $this->db->bind('stbk', $data['NIM']);
+        $this->db->bind('stbk', $data['stb']);
         $this->db->bind('kodeKelas', $data['kodeKelas']);
         $this->db->bind('namas', $data['nama']);
-        $this->db->bind('passwords', $data['NIM'] . "-123");
+        $this->db->bind('passwords', $data['stb'] . "-123");
 
         // $this->db2->query($query2);
         // $this->db2->bind('stbkk', $data['NIM']);
@@ -46,7 +46,7 @@ class User {
             $this->db->execute();
             // $this->db2->execute();
         }catch (Exception $exception){
-            // echo $exception->getMessage();
+            echo $exception->getMessage();
         }
     }
 

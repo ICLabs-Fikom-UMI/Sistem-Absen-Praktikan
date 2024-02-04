@@ -39,7 +39,7 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Input Data Mahasiswa</label>
                 </div>
-                <form class="mt-5 jarak-form">
+                <form class="mt-5 jarak-form" action="<?= BASEURL; ?>/Admin/inputData" method="post">
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
                         <div class="col-sm-4">
@@ -49,13 +49,13 @@
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">Nama</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control border border-black jenis-font-label" name="password" placeholder="Masukan Nama" required>
+                            <input type="text" class="form-control border border-black jenis-font-label" name="nama" placeholder="Masukan Nama" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">Kelas</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control border border-black jenis-font-label" name="kodeKelas" placeholder="Masukan Kelas" required>
+                            <input type="text" class="form-control border border-black jenis-font-label" name="kodeKelas" placeholder="Masukan Kode Kelas" required>
                         </div>
                     </div>
                     <div class="container mt-5 justify-content-center d-flex jarak">

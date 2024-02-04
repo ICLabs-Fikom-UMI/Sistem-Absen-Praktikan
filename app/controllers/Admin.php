@@ -17,9 +17,8 @@ class Admin extends Controller {
     }
 
     public function inputData(){
-
         if($_SESSION['admin']){
-            // $this->model('User')->insertData($_POST);
+            $this->model('User')->insertData($_POST);
 
             $this->view('template/header');
             $this->view('admin/inputDataMahasiswa');
