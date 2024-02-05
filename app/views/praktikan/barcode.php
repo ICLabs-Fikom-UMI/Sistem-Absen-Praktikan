@@ -30,7 +30,7 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Buat Barkode</label>
                 </div>
-                <form class="mt-5 jarak-form" enctype="multipart/form-data">
+                <form class="mt-5 jarak-form"  action="<?= BASEURL; ?>/Praktikan/barcode" method="post">
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
                         <div class="col-sm-4">
@@ -52,11 +52,14 @@
                         </div>
                     </div>
                 </form>
-
-                <div class="image-2">
-                    <?php if ($data['hasil'] != NULL): ?>
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= <?php echo $data['hasil'].$reusltStb ?>" alt="">
-                    <?php endif; ?>
+                <div class="container mt-5 d-flex justify-content-center">
+                    <div class="container mt-5 d-flex justify-content-center ">
+                        <div class="mt-5">
+                            <?php if ($data['hasil'] != NULL): ?>
+                                <img class="image-2" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= <?php echo $data['hasil'].$reusltStb ?>" alt="">
+                            <?php endif; ?>                    
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>
