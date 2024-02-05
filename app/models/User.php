@@ -124,7 +124,7 @@ class User {
             $this->db->execute();
         }catch (Exception $exception){
             // echo $exception->getMessage();
-        }
+        }   
     }
 
     public function buatBarcode($data){
