@@ -191,3 +191,14 @@ li {
     margin-left: 215px !important;
 }
 
+.margin-keatas{
+    margin-top: 200px !important;
+}
+
+.image-2 {
+    background-color: red !important;
+    height: 305px !important;
+    width: 100%px;
+    display: flex;
+    justify-content: center;
+}
