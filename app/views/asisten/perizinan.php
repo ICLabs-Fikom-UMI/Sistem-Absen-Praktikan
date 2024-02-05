@@ -39,7 +39,7 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Perizinan</label>
                 </div>
-                <form class="mt-5 jarak-form" enctype="multipart/form-data">
+                <form class="mt-5 jarak-form" action="<?= BASEURL;?>/Asisten/perizinan" method="post" enctype="multipart/form-data">
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
                         <div class="col-sm-4">

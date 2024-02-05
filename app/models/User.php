@@ -61,6 +61,7 @@ class User {
 
 
     public function getDataAbsen($data){
+
         if($data['stb'] != NULL){
 
             $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas,
@@ -122,7 +123,7 @@ class User {
         try{
             $this->db->execute();
         }catch (Exception $exception){
-            // echo $exception->getMessage();
+            echo $exception->getMessage();
         }
     }
 
@@ -204,6 +205,7 @@ class User {
         $frekuensi = $data['frekuensi'];
         $status = $data['status'];
         $i = 0;
+
         foreach ($status as $value){
 
             $this->db->query($query);
@@ -215,7 +217,7 @@ class User {
             try{
                 $this->db->execute();
             }catch(Exception $exception){
-                echo $exception->getMessage();
+                // echo $exception->getMessage();
             }
 
             $i++;
@@ -224,6 +226,7 @@ class User {
     
     
     public function updateDataMahasiswa($data){
+
         $query = "CALL updateDataMahasiswa(:stb, :frekuensi, :frekuensiBaru, :nama, :kelas)";
 
 

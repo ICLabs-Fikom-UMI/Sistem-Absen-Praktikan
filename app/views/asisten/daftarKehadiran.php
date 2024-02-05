@@ -39,13 +39,21 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Daftar Kehadiran Mahasiswa</label>
                 </div>
-                <form class="mt-5 jarak-form">
-                    <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control border border-black jenis-font-label" name="stb" placeholder="Masukkan NIM" required>
+                <form class="mt-5 jarak-form" action="<?= BASEURL; ?>/Asisten/Kehadiran" method="post">
+                        <div container d-flex>
+                            <div class="mb-3 row">
+                                <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control border border-black jenis-font-label" name="stb" placeholder="Masukkan NIM">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">frekuensi</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control border border-black jenis-font-label" name="frekuensi" placeholder="Masukkan Frekuensi">
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     <div class="container mt-5 ms-5 jarak">
                         <div class="mt-5 ms-5">
                             <input class="button-simpan jenis-font-label" type="submit" name="cari" value="Kirim">
@@ -75,33 +83,89 @@
                                             <th>10</th>
                                             <th>Jumlah Pertemuan</th>
                                             <th>Edit</th>
-                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>123456789</td>
-                                            <td>Budi Santoso Ahmad Rendi Abdul Malik</td>
-                                            <td>TI-A</td>
-                                            <td>X</td>
-                                            <td>O</td>
-                                            <td>X</td>
-                                            <td>O</td>
-                                            <td>X</td>
-                                            <td>O</td>
-                                            <td>X</td>
-                                            <td>O</td>
-                                            <td>X</td>
-                                            <td>O</td>
-                                            <td>10</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm">Edit</button></td>
-                                            <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-                                        </tr>
+                                        <?php foreach ($data['mhst'] as $value): ?>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <?php echo $value['stb'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $value['nama'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $value['kelas'] ?>
+                                                </td>
+                                                    <?php foreach ($value['status'] as $status): ?>
+                                                        <td>
+                                                            <?php echo $status ?>
+                                                        </td>
+                                                    <?php endforeach; ?>
+                                                <td>10</td>
+                                                <td><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit</button></td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <?php foreach ($data['mhst'] as $value): ?>
+                                <form method="post" action="<?= BASEURL;?>/Asisten/updateData">
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">NIM:</label>
+                                        <input type="text" class="form-control" name="stb" value="<?php echo $value['stb'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Nama:</label>
+                                        <input type="text" class="form-control" name="nama" value="<?php echo $value['nama'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Kelas:</label>
+                                        <input type="text" class="form-control" name="kelas" value="<?php echo $value['kelas'] ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Kelas:</label>
+                                        <input type="text" class="form-control" name="frekuensi" value="<?php echo $value['frekuensi'] ?>">
+                                    </div>
+                                    
+                                        <?php foreach ($value['status'] as $status): ?>
+                                            <td>
+                                                <?php
+                                                    $i;
+                                                    $i++;
+                                                    echo "Pertemuan " . $i;
+                                                ?>
+                                                <select class="form-select" aria-label="Default select example" name="status[]">
+                                                <option selecteds style="width: 200px; !important"> <?php echo $status; ?></option>
+                                                <option value="A">A</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                                <option value="S">S</option>
+                                                </select>
+                                            </td>
+                                        <?php endforeach; ?>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" data-bs-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label">Simpan</button>
+                                    </div>
+                                </form>
+                            <?php endforeach; ?>
+                        </div>
                         </div>
                     </div>
 

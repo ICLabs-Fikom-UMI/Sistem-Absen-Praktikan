@@ -15,7 +15,6 @@ class Asisten extends Controller {
     }
 
     public function Kehadiran(){
-
         if($_SESSION['asisten']){
             $data['mhs'] = $this->model('User')->getDataAbsen($_POST);
             $groupedData = array();
@@ -28,6 +27,7 @@ class Asisten extends Controller {
                         'nama' => $value['nama'],
                         'stb' => $value['stb'],
                         'kelas' => $value['kelas'],
+                        'frekuensi' => $value['frekuensi'],
                         'status' => array_fill(0, 10, '') 
                     );
                 }
@@ -42,7 +42,7 @@ class Asisten extends Controller {
             $groupedData = array_values($groupedData);
             
             $data['mhst'] = $groupedData;
-
+            
             $this->view('template/header');
             $this->view('asisten/daftarKehadiran', $data);
             $this->view('template/footer');
@@ -107,6 +107,16 @@ class Asisten extends Controller {
 
     public function deleteData($stb){
         $this->model('User')->deleteAbsen($stb);
+        $this->Kehadiran();
+    }
+
+    // public function updateDataAbsen(){
+    //     $this->model('User')->updateDataAbsen($_POST);
+    //     $this->Kehadiran();
+    // }
+
+    public function updateData(){
+        $this->model('User')->updateDataAbsen($_POST);
         $this->Kehadiran();
     }
 
