@@ -30,7 +30,7 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Perizinan</label>
                 </div>
-                <form class="mt-5 jarak-form" enctype="multipart/form-data">
+                <form class="mt-5 jarak-form" enctype="multipart/form-data" action="<?= BASEURL;?>/Praktikan/perizinan" method="post">
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
                         <div class="col-sm-4">
@@ -51,10 +51,10 @@
                     </div>
                     <div class="container mt-5 justify-content-center d-flex jarak">
                         <div class="mt-5">
-                            <input class="button-simpan jenis-font-label" type="submit" name="submit" value="Kirim">
+                            <input class="button-simpan jenis-font-label" type="submit" value="Kirim">
                         </div>
                         <div class="mt-5">
-                            <input class="button-batal jenis-font-label" type="reset" name="reset" value="Batal">
+                            <input class="button-batal jenis-font-label" type="reset"  value="Batal">
                         </div>
                     </div>
                 </form>
