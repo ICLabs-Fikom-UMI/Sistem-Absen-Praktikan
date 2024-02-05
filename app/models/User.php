@@ -123,7 +123,7 @@ class User {
         try{
             $this->db->execute();
         }catch (Exception $exception){
-            echo $exception->getMessage();
+            // echo $exception->getMessage();
         }
     }
 

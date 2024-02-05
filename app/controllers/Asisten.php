@@ -55,6 +55,7 @@ class Asisten extends Controller {
     public function daftarPerizinan(){
         if($_SESSION['asisten']){
             $data['mhs'] = $this->model('User')->daftarPerizinan($_POST);
+            
             $this->view('template/header');
             $this->view('asisten/daftarPerizinan', $data);
             $this->view('template/footer');

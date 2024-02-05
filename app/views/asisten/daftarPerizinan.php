@@ -40,16 +40,16 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Daftar Perizinan</label>
                 </div>
-                <form class="mt-5 jarak-form">
+                <form class="mt-5 jarak-form" action="<?= BASEURL; ?>/Asisten/daftarPerizinan" method="post">
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control border border-black jenis-font-label" name="stb" placeholder="Masukkan NIM" required>
+                            <input type="text" class="form-control border border-black jenis-font-label" name="cari" placeholder="Masukkan NIM" required>
                         </div>
                     </div>
                     <div class="container mt-5 ms-5 jarak">
                         <div class="mt-5 ms-5">
-                            <input class="button-simpan jenis-font-label" type="submit" name="cari" value="Kirim">
+                            <input class="button-simpan jenis-font-label" type="submit" value="Kirim">
                         </div>
                     </div>
                 </form>
@@ -67,14 +67,25 @@
                                             <th>Buka</th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>13020210048</td>
-                                                <td>Ahmad Rendi</td>
-                                                <td>A1</td>
-                                                <td>2/2/2024</td>
-                                                <td><button type="button" class="btn btn-primary btn-sm">Buka</button></td>
-                                            </tr>
+                                            <?php foreach($data['mhs'] as $value): ?>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <?php echo $value['stb'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $value['nama'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $value['kelas'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $value['waktu'] ?>
+                                                    </td>
+                                                    <td><button type="button" class="btn btn-primary btn-sm">Buka</button></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
