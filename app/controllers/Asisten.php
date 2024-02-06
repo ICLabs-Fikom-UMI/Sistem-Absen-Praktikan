@@ -65,9 +65,57 @@ class Asisten extends Controller {
         }
     }
 
+    public function uploadGambar($image){
+
+        $directory = '../public/img/uploads/';
+
+        $namaFile = $_FILES['file']['name'];
+        $ukuranFile = $_FILES['file']['size'];
+        $error =  $_FILES['file']['error'];
+        $tempName = $_FILES['file']['tmp_name'];
+      
+        $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+        $ekstensiGambar = explode('.', $namaFile);
+        $ekstensiGambar = strtolower(end($ekstensiGambar));
+        
+        if(!in_array($ekstensiGambar, $ekstensiGambarValid)){
+          echo "<script>
+                    alert('jenis file tidak valid');
+                </script>";
+                return false;
+        }
+        echo $ekstensiGambar;
+      
+        $namaFileBaru = uniqid();
+        $namaFileBaru .= '.';
+        $namaFileBaru .= $ekstensiGambar;
+      
+        echo $namaFileBaru;
+
+        if(file_exists($directory)){
+            echo "folder tesedia";
+        }else {
+            echo "tidak tersedia";
+        }
+        
+      
+        $error =  $_FILES['gambar']['error'];
+            // Lanjutkan proses unggahan file
+            $move = move_uploaded_file($tempName, $directory . $namaFileBaru);
+            if ($move) {
+                echo "berhasil";
+            } else {
+                echo "Gagal menyimpan file";
+            }
+      
+        
+        return $namaFileBaru;
+    }
+
     public function perizinan(){
         if($_SESSION['asisten']){
-            $this->model('User')->buatPerizinan($_POST, $_FILES);
+            $this->uploadGambar($_FILES);
+            // $this->model('User')->buatPerizinan($_POST, $_FILES);
             $this->view('template/header');
             $this->view('asisten/perizinan');
             $this->view('template/footer');
@@ -110,11 +158,6 @@ class Asisten extends Controller {
         $this->model('User')->deleteAbsen($stb);
         $this->Kehadiran();
     }
-
-    // public function updateDataAbsen(){
-    //     $this->model('User')->updateDataAbsen($_POST);
-    //     $this->Kehadiran();
-    // }
 
     public function updateData(){
         $this->model('User')->updateDataAbsen($_POST);
