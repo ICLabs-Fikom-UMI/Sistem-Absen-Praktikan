@@ -46,7 +46,7 @@ class User {
 
     public function insertDataPraktikum($data){
 
-        $query2 = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUES (:stbkk, :frekuensi)";
+        $query2 = "INSERT INTO tbl_frekuensi_matkul(stb, frekuensi) VALUE (:stbkk, :frekuensi)";
 
         $this->db2->query($query2);
         $this->db2->bind('stbkk', $data['stb']);
@@ -55,7 +55,7 @@ class User {
         try{
             $this->db2->execute();
         }catch (Exception $exception){
-            echo $exception->getMessage();
+            // echo $exception->getMessage();
         }
     }
 
@@ -91,6 +91,28 @@ class User {
             }catch(Exception $exception){
             }
         }
+    }
+
+    public function getDataAbsenForUpdate($stb, $frekuensi){
+
+            $query = "SELECT tbl_user.nama, tbl_user.stb, tbl_kelas.kelas,
+                        tbl_absen.status, tbl_frekuensi_matkul.frekuensi
+                FROM tbl_absen
+                INNER JOIN tbl_frekuensi_matkul ON tbl_frekuensi_matkul.kode_frekuensi = tbl_absen.kode_frekuensi
+                INNER JOIN tbl_user ON tbl_frekuensi_matkul.stb = tbl_user.stb
+                INNER JOIN tbl_kelas ON tbl_user.kode_kelas = tbl_kelas.kode_kelas
+                WHERE tbl_frekuensi_matkul.stb = :stbk and tbl_frekuensi_matkul.frekuensi = :frekuensi";
+
+            $this->db->query($query);
+            $this->db->bind('stbk', $stb);
+            $this->db->bind('frekuensi', $frekuensi );
+
+            try {
+                return $this->db->resultSet();
+            }catch (Exception $exception){
+                // echo $exception->getMessage();
+            }
+            
     }
 
     public function daftarPerizinan($data){
@@ -217,7 +239,7 @@ class User {
             try{
                 $this->db->execute();
             }catch(Exception $exception){
-                // echo $exception->getMessage();
+                echo $exception->getMessage();
             }
 
             $i++;

@@ -11,7 +11,7 @@
                         <a href="<?= BASEURL; ?>/Admin/inputData" class="list-group-item list-group-item-action font-select color-bg border border-0">Input Data Mahasiswa</a>
                    </li>
                     <li>
-                         <a href="<?= BASEURL; ?>/Admin/inputDataPraktikan" class="list-group-item list-group-item-action font-select color-bg border border-0">Input Data Praktikum</a>
+                         <a href="<?= BASEURL; ?>/Admin/inputDataPraktikum" class="list-group-item list-group-item-action font-select color-bg border border-0">Input Data Praktikum</a>
                     </li>
                     <li>
                         <a href="<?= BASEURL; ?>/Admin/dataMahasiswa" class="list-group-item list-group-item-action font-select color-bg border border-0">Data Mahasiswa</a>

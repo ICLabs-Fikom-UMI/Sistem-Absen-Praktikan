@@ -10,7 +10,7 @@
                         <a href="<?= BASEURL; ?>/Admin/inputData" class="list-group-item list-group-item-action font-select color-bg border border-0">Input Data Mahasiswa</a>
                    </li>
                     <li>
-                         <a href="<?= BASEURL; ?>/Admin/inputDataPraktikan" class="list-group-item list-group-item-action font-select color-bg border border-0">Input Data Praktikum</a>
+                         <a href="<?= BASEURL; ?>/Admin/inputDataPraktikum" class="list-group-item list-group-item-action font-select color-bg border border-0">Input Data Praktikum</a>
                     </li>
                     <li>
                         <a href="<?= BASEURL; ?>/Admin/dataMahasiswa" class="list-group-item list-group-item-action font-select color-bg border border-0">Data Mahasiswa</a>
@@ -39,7 +39,7 @@
                 <div class="container d-flex justify-content-center">
                     <label class="jenis-font-label fs-4" for="">Input Data Praktikan</label>
                 </div>
-                <form class="mt-5 jarak-form" action= "<?= BASEURL; ?>/Admin/inputDataPraktikan" method="post" >
+                <form class="mt-5 jarak-form" action= "<?= BASEURL; ?>/Admin/inputDataPraktikum" method="post" >
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">NIM</label>
                         <div class="col-sm-4">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="container mt-5 justify-content-center d-flex jarak">
                         <div class="mt-5">
-                            <input class="button-simpan jenis-font-label" type="submit" value="Simpan">
+                            <input class="button-simpan jenis-font-label" type="submit" name="submit" value="Simpan">
                         </div>
                         <div class="mt-5">
                             <input class="button-batal jenis-font-label" type="reset" value="Batal">
