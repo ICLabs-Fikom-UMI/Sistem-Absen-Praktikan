@@ -20,7 +20,7 @@ class Asisten extends Controller {
             $groupedData = array();
 
             foreach ($data['mhs'] as $value) {
-                $key = $value['nama'] . '-' . $value['stb'] . '-' . $value['kelas'];
+                $key = $value['nama'] . '-' . $value['stb'] . '-' . $value['kelas'] . '-' . $value['frekuensi'];
 
                 if (!isset($groupedData[$key])) {
                     $groupedData[$key] = array(
@@ -42,7 +42,7 @@ class Asisten extends Controller {
             $groupedData = array_values($groupedData);
             
             $data['mhst'] = $groupedData;
-            
+
             $this->view('template/header');
             $this->view('asisten/daftarKehadiran', $data);
             $this->view('template/footer');
@@ -62,6 +62,43 @@ class Asisten extends Controller {
         }
         else {
             header('Location: http://localhost/tubes/public/Login/index');
+        }
+    }
+
+    public function viewUpdateDataAbsen($stb, $frekuensi){
+        if($_SESSION['asisten']){
+
+            $data['mhs'] = $this->model('User')->getDataAbsenForUpdate($stb, $frekuensi);
+
+            $groupedData = array();
+
+            foreach ($data['mhs'] as $value) {
+                $key = $value['nama'] . '-' . $value['stb'] . '-' . $value['kelas'] . '-' . $value['frekuensi'];
+
+                if (!isset($groupedData[$key])) {
+                    $groupedData[$key] = array(
+                        'nama' => $value['nama'],
+                        'stb' => $value['stb'],
+                        'kelas' => $value['kelas'],
+                        'frekuensi' => $value['frekuensi'],
+                        'status' => array_fill(0, 10, '') 
+                    );
+                }
+
+                $index = array_search('', $groupedData[$key]['status']);
+
+                if ($index !== false) {
+                    $groupedData[$key]['status'][$index] = $value['status'];
+                }
+            }
+
+            $groupedData = array_values($groupedData);
+            
+            $data['mhst'] = $groupedData;
+
+            $this->view('template/header');
+            $this->view('asisten/editDataAbsen', $data);
+            $this->view('template/footer');  
         }
     }
 
