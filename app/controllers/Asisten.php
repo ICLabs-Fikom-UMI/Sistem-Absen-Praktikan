@@ -136,8 +136,9 @@ class Asisten extends Controller {
 
     public function perizinan(){
         if($_SESSION['asisten']){
-            $gambar = $this->uploadGambar($_FILES);
+            
             if(!$_POST == NULL){
+                $gambar = $this->uploadGambar($_FILES);
                 if($gambar){
                     $this->model('User')->buatPerizinan($_POST, $gambar);
                 }

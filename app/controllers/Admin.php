@@ -164,4 +164,10 @@ class Admin extends Controller {
         $this->model('User')->updateDataMahasiswa($_POST);
         $this->dataMahasiswa();
     }
+
+    public function viewImagePerizinan($data){
+        $this->view('template/header');
+        $this->view('admin/viewImagePerizinan', $data);
+        $this->view('template/footer');
+    }
 }

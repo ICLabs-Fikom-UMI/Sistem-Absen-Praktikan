@@ -62,7 +62,7 @@
                                             <th>No</th>
                                             <th>NIM</th>
                                             <th>Nama</th>
-                                            <th>Kelas</th>
+                                            <th>frekuensi</th>
                                             <th>Keterangan</th>
                                             <th>Tanggal</th>
                                             <th>Buka</th>
@@ -78,12 +78,18 @@
                                                             <?php echo $value['nama'] ?>
                                                         </td>
                                                         <td>
-                                                            <?php echo $value['kelas'] ?>
+                                                            <?php echo $value['frekuensi'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $value['keterangan'] ?>
                                                         </td>
                                                         <td>
                                                             <?php echo $value['waktu'] ?>
                                                         </td>
-                                                        <td><button type="button" class="btn btn-primary btn-sm">Buka</button></td>
+                                                        <td>
+                                                            <a class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" style="background-color: red; text-decoration: none; color: white;" href="<?= BASEURL; ?>/Admin/viewImagePerizinan/<?= $value['paths'];?>">Open</a>
+                                                        </td>
+                                                        
                                                     </tr>
                                                 <?php endforeach; ?>                                       
                                         </tbody>
