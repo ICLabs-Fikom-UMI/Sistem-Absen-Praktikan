@@ -224,3 +224,8 @@ li {
     align-items: center;
     /* opacity: 0.5; */
 }
+
+.size-image-open-perizinan {
+    height: 150px !important;
+    width: 100px !important;
+}

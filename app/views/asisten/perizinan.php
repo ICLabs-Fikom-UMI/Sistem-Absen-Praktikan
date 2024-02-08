@@ -53,9 +53,15 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">Keterangan</label>
+                        <div class="col-sm-4">
+                        <textarea class="form-control  border border-black" name="keterangan" required></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-1 col-form-label jenis-font-label">Foto</label>
                         <div class="col-sm-4">
-                            <input type="file" class="form-control border border-black jenis-font-label" name="file" placeholder="Masukan Frekuensi" required>
+                            <input type="file" class="form-control border border-black jenis-font-label" name="file" placeholder="Masukan Frekuensi">
                         </div>
                     </div>
                     <div class="container mt-5 justify-content-center d-flex jarak">

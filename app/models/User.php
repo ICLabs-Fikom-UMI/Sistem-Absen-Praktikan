@@ -117,7 +117,8 @@ class User {
 
     public function daftarPerizinan($data){
 
-        $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas, tbl_surat.waktu
+        $query = "SELECT tbl_user.stb, tbl_user.nama, tbl_kelas.kelas,
+        tbl_surat.waktu, tbl_surat.frekuensi, tbl_surat.paths, tbl_surat.keterangan
         FROM tbl_surat
         INNER JOIN tbl_user ON tbl_surat.stb = tbl_user.stb
         INNER JOIN tbl_kelas ON tbl_user.kode_kelas = tbl_kelas.kode_kelas
@@ -135,12 +136,13 @@ class User {
 
     public function buatPerizinan($data, $file){
 
-        $query = "CALL insert_surat(:stbk, :frekuensis, :files)";
+        $query = "CALL insert_surat(:stbk, :frekuensis, :files, :ket)";
 
         $this->db->query($query);
         $this->db->bind('stbk', $data['stb']);
         $this->db->bind('frekuensis', $data['frekuensi']);
-        $this->db->bind('files', $file['file']['tmp_file'] . $file['file']['name']);
+        $this->db->bind('files', $file);
+        $this->db->bind('ket', $data['keterangan']);
 
         try{
             $this->db->execute();
@@ -250,7 +252,6 @@ class User {
     public function updateDataMahasiswa($data){
 
         $query = "CALL updateDataMahasiswa(:stb, :frekuensi, :frekuensiBaru, :nama, :kelas)";
-
 
         $this->db->query($query);
 

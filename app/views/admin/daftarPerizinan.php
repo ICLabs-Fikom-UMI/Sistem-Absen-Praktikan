@@ -63,6 +63,7 @@
                                             <th>NIM</th>
                                             <th>Nama</th>
                                             <th>Kelas</th>
+                                            <th>Keterangan</th>
                                             <th>Tanggal</th>
                                             <th>Buka</th>
                                         </thead>

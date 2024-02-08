@@ -54,8 +54,9 @@ class Asisten extends Controller {
 
     public function daftarPerizinan(){
         if($_SESSION['asisten']){
+
             $data['mhs'] = $this->model('User')->daftarPerizinan($_POST);
-            
+
             $this->view('template/header');
             $this->view('asisten/daftarPerizinan', $data);
             $this->view('template/footer');
@@ -121,38 +122,27 @@ class Asisten extends Controller {
                 </script>";
                 return false;
         }
-        echo $ekstensiGambar;
-      
+
         $namaFileBaru = uniqid();
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensiGambar;
       
-        echo $namaFileBaru;
-
-        if(file_exists($directory)){
-            echo "folder tesedia";
-        }else {
-            echo "tidak tersedia";
-        }
-        
-      
         $error =  $_FILES['gambar']['error'];
             // Lanjutkan proses unggahan file
             $move = move_uploaded_file($tempName, $directory . $namaFileBaru);
-            if ($move) {
-                echo "berhasil";
-            } else {
-                echo "Gagal menyimpan file";
-            }
-      
         
         return $namaFileBaru;
     }
 
     public function perizinan(){
         if($_SESSION['asisten']){
-            $this->uploadGambar($_FILES);
-            // $this->model('User')->buatPerizinan($_POST, $_FILES);
+            $gambar = $this->uploadGambar($_FILES);
+            if(!$_POST == NULL){
+                if($gambar){
+                    $this->model('User')->buatPerizinan($_POST, $gambar);
+                }
+                
+            }
             $this->view('template/header');
             $this->view('asisten/perizinan');
             $this->view('template/footer');
@@ -199,6 +189,12 @@ class Asisten extends Controller {
     public function updateData(){
         $this->model('User')->updateDataAbsen($_POST);
         $this->Kehadiran();
+    }
+
+    public function viewImagePerizinan($data){
+        $this->view('template/header');
+        $this->view('asisten/viewImagePerizinan', $data);
+        $this->view('template/footer');
     }
 
 
