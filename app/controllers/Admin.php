@@ -170,4 +170,9 @@ class Admin extends Controller {
         $this->view('admin/viewImagePerizinan', $data);
         $this->view('template/footer');
     }
+
+
+
+    
+
 }
