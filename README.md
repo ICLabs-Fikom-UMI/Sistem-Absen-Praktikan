@@ -25,7 +25,7 @@ MVC (Model-View-Controller) adalah sebuah pola arsitektur perangkat lunak yang d
 
 
 > [!CAUTION]
-> PHP VERSION 8.1.2-1ubuntu2.14
+> PHP VERSION 8.3.2-1ubuntu2.14
 
 
 
