@@ -80,7 +80,7 @@
                                                 <td>
                                                     <?php echo $value['kelas'] ?>
                                                 </td>
-                                                <td><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit</button></td>
+                                                <td> <a class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" style="background-color: red; text-decoration: none; color: white;" href="<?= BASEURL; ?>/Admin/viewUpdateDataMahasiswa/<?= $value['stb'] . "/" . $value['frekuensi'];?>">Edit</a></td>
                                                 <td><button type="button" class="btn btn-danger btn-sm" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Delete</button></td>
                                             </tr>
                                         <?php endforeach; ?>

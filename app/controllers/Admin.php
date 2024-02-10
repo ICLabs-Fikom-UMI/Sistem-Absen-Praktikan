@@ -160,6 +160,14 @@ class Admin extends Controller {
         $this->daftarAbsen();
     }
 
+
+    public function viewUpdateDataMahasiswa($stb, $frekuensi){
+        $data['mhs'] = $this->model('User')->getDataMahasiswaByStb($stb, $frekuensi);
+        $this->view('template/header');
+        $this->view('admin/editDataMahasiswa', $data);
+        $this->view('template/footer');
+    }
+
     public function updateDataMahasiswa(){
         $this->model('User')->updateDataMahasiswa($_POST);
         $this->dataMahasiswa();
@@ -172,7 +180,5 @@ class Admin extends Controller {
     }
 
 
-
-    
 
 }

@@ -267,4 +267,16 @@ class User {
             echo $exception->getMessage();
         }
     }
+
+    public function getDataMahasiswaByStb($stb, $frekuensi){
+        $query = "CALL getUserByStb(:stb, :frekuensi)";
+        $this->db->query($query);
+        $this->db->bind('stb', $stb);
+        $this->db->bind('frekuensi', $frekuensi);
+        try{
+            return $this->db->resultSet();
+        }catch(Exception $exception){
+            echo $exception->getMessage();
+        }
+    }
 }
