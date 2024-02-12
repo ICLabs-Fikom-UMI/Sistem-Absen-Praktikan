@@ -59,6 +59,11 @@ class Admin extends Controller {
         if($_SESSION['admin']){
 
             $data['mhs'] = $this->model('User')->getDataAbsen($_POST);
+            $_SESSION['stb'] = $_POST['stb'];
+            $_SESSION['frekuensi'] = $_POST['frekuensi'];
+
+            $_SESSION['campur'] = $_POST;
+
             $groupedData = array();
 
             foreach ($data['mhs'] as $value) {
@@ -179,6 +184,52 @@ class Admin extends Controller {
         $this->view('template/footer');
     }
 
+    public function cetak(){
+        $data['mhs'] = $this->model('User')->getDataAbsen($_SESSION);
 
+        $groupedData = array();
+        
+        foreach ($data['mhs'] as $value) {
+            $key = $value['nama'] . '-' . $value['stb'] . '-' . $value['kelas'] . '-' . $value['frekuensi'];
+        
+            if (!isset($groupedData[$key])) {
+                $groupedData[$key] = array(
+                    'nama' => $value['nama'],
+                    'stb' => $value['stb'],
+                    'kelas' => $value['kelas'],
+                    'frekuensi' => $value['frekuensi'],
+                    'status' => array_fill(0, 10, ''), // Inisialisasi status dengan array kosong
+                    'alpa' => 0,
+                    'izin' => 0,
+                    'sakit' => 0,
+                    'hadir' => 0
+                );
+            }
+        
+            $index = array_search('', $groupedData[$key]['status']);
+        
+            if ($index !== false) {
+                $groupedData[$key]['status'][$index] = $value['status'];
+        
+                // Memeriksa status dan menghitung jumlahnya
+                if ($value['status'] == 'A') {
+                    $groupedData[$key]['alpa']++;
+                } elseif ($value['status'] == 'I') {
+                    $groupedData[$key]['izin']++;
+                } elseif ($value['status'] == 'S') {
+                    $groupedData[$key]['sakit']++;
+                } elseif ($value['status'] == 'H') {
+                    $groupedData[$key]['hadir']++;
+                }
+            }
+        }
+        
+        $groupedData = array_values($groupedData);
+        
+        $data['mhst'] = $groupedData;
 
+        $this->view('template/header');
+        $this->view('admin/cetak', $data);
+        $this->view('template/footer');
+    }
 }

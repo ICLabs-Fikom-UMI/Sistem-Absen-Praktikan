@@ -55,9 +55,12 @@
                         </div>
                     </div>
                     
-                    <div class="container mt-5 ms-5 jarak">
-                        <div class="mt-5 ms-5">
-                            <input class="button-simpan jenis-font-label" type="submit" name="cari" value="Kirim">
+                    <div class="container mt-5 ms-5 jarak d-flex">
+                        <div class="">
+                            <input class="button-simpan jenis-font-label" type="submit" name="cari">
+                        </div>
+                        <div style="width : 850px;">
+                            <a class="button-simpan jenis-font-label" style="text-decoration: none; color: white; margin-left : 700px; heigt : 50px; width : 100px" href="<?= BASEURL; ?>/Admin/cetak">Cetak</a>
                         </div>
                     </div>
                 </form>
@@ -117,165 +120,7 @@
                             </div>  
                         </div>
                     </div>
-
-
-
-                    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <?php foreach ($data['mhst'] as $value): ?>
-                                <?php echo $idKedua . " " . $idPertama; ?>
-                                <form method="post" action="<?= BASEURL;?>/Admin/updateDataAbsen">
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">NIM:</label>
-                                            <input type="text" class="form-control" name="stb" value="<?php echo $value['stb'] ?>">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Nama:</label>
-                                            <input type="text" class="form-control" name="nama" value="<?php echo $value['nama'] ?>">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                            <input type="text" class="form-control" name="kelas" value="<?php echo $value['kelas'] ?>">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                            <input type="text" class="form-control" name="frekuensi" value="<?php echo $value['frekuensi'] ?>">
-                                        </div>
-                                        
-                                            <?php foreach ($value['status'] as $status): ?>
-                                                <td>
-                                                    <?php
-                                                        $i;
-                                                        $i++;
-                                                        echo "Pertemuan " . $i;
-                                                    ?>
-                                                    <select class="form-select" aria-label="Default select example" name="status[]">
-                                                    <option selecteds style="width: 200px; !important"> <?php echo $status; ?></option>
-                                                    <option value="A">A</option>
-                                                    <option value="H">H</option>
-                                                    <option value="I">I</option>
-                                                    <option value="S">S</option>
-                                                    </select>
-                                                </td>
-                                            <?php endforeach; ?>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" data-bs-dismiss="modal">Batal</button>
-                                            <button type="submit" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label">Simpan</button>
-                                        </div>
-                                </form>
-                            <?php endforeach; ?>
-                        </div>
-                        </div>
-                    </div>
-                    </div> -->
-
-
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form method="post" action="<?= BASEURL;?>/Admin/updateDataAbsen">
-                                        <input type="text" id="edit-stb" name="stb">
-                                        <input type="text" id="edit-frekuensi" name="frekuensis">
-                                        <?php echo $_POST['frekuensis'] . " " . "sini"; ?>
-                                        <!-- Input lainnya -->
-                                        <div class="mb-3">
-                                            <label for="nama" class="col-form-label">Nama:</label>
-                                            <input type="text" class="form-control" id="edit-nama" name="nama" value="">
-                                        </div>
-                                        <!-- Tambahkan input lainnya sesuai kebutuhan -->
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </form>
-                                    <!-- <?php foreach ($data['mhst'] as $value): ?>
-                                        <input type="hidden" id="edit-stb" name="stb">
-                                        <input type="hidden" id="edit-frekuensi" name="frekuensi">
-                                        <?php echo $_POST['frekuensi']; ?>
-                                            <?php if($_POST['stb'] == $value['stb'] && $_POST['frekuensi'] == $value['frekuensi']): ?>
-                                                <form method="post" action="<?= BASEURL;?>/Admin/updateDataAbsen">
-                                                        <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">NIM:</label>
-                                                            <input type="text" class="form-control" name="stb" value="<?php echo $value['stb'] ?>">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Nama:</label>
-                                                            <input type="text" class="form-control" name="nama" value="<?php echo $value['nama'] ?>">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                                            <input type="text" class="form-control" name="kelas" value="<?php echo $value['kelas'] ?>">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Kelas:</label>
-                                                            <input type="text" class="form-control" name="frekuensi" value="<?php echo $value['frekuensi'] ?>">
-                                                        </div>
-                                                        
-                                                            <?php foreach ($value['status'] as $status): ?>
-                                                                <td>
-                                                                    <?php
-                                                                        $i;
-                                                                        $i++;
-                                                                        echo "Pertemuan " . $i;
-                                                                    ?>
-                                                                    <select class="form-select" aria-label="Default select example" name="status[]">
-                                                                    <option selecteds style="width: 200px; !important"> <?php echo $status; ?></option>
-                                                                    <option value="A">A</option>
-                                                                    <option value="H">H</option>
-                                                                    <option value="I">I</option>
-                                                                    <option value="S">S</option>
-                                                                    </select>
-                                                                </td>
-                                                            <?php endforeach; ?>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label" data-bs-dismiss="modal">Batal</button>
-                                                            <button type="submit" class="btn button-simpan-2 bg-primary rounded-4  jenis-font-label">Simpan</button>
-                                                        </div>
-                                                </form>
-                                            <?php endif; ?>
-                                    <?php endforeach; ?> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    
             </div>
         </div>
     </div>
-
-    <script>
-        var editButtons = document.querySelectorAll('.btn-edit');
-
-        editButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                var stb = this.getAttribute('data-stb');
-                var frekuensi = this.getAttribute('data-frekuensi');
-
-                // Isi nilai input pada modal dengan data yang dipilih
-                document.getElementById('edit-stb').value = stb;
-                document.getElementById('edit-frekuensi').value = frekuensi;
-
-                console.log(stb);
-                console.log(frekuensi);
-
-                // Tampilkan modal
-                var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-                modal.show();
-            });
-        });
-    </script>
 
