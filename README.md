@@ -23,7 +23,9 @@ MVC (Model-View-Controller) adalah sebuah pola arsitektur perangkat lunak yang d
 ### LINK UI/UX [Click here](https://drive.google.com/file/d/16i9voax2BozuJBaurVpAUqao3VNE54Px/view?usp=sharing)
 
 
-
+### Screnshoot Fitur
+  - Login
+    ![Screenshot from 2024-02-17 09-17-09](https://github.com/ICLabs-Fikom-UMI/Sistem-Absen-Praktikan/assets/107190972/820799bf-611f-4b48-8988-4139d90b0a1d)
 
 
 > [!CAUTION]
